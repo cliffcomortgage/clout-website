@@ -1,9 +1,86 @@
 @import "tailwindcss";
 
 /* ============================================================
+   Brand typefaces — self-hosted from /public/fonts/
+   Grift: primary UI + heading font
+   Jitzu: display / hero accent font
+   ============================================================ */
+
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-ITALIC.TTF') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-MEDIUM.TTF') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-MEDIUMITALIC.TTF') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-SEMIBOLD.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Grift';
+  src: url('/fonts/GRIFT-BOLD.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jitzu';
+  src: url('/fonts/JITZU-REGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jitzu';
+  src: url('/fonts/JITZU-MEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jitzu';
+  src: url('/fonts/JITZU-BOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Jitzu';
+  src: url('/fonts/JITZU-BLACK.OTF') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
    Clout brand design tokens
    Locked palette: teal anchor + rust accent
-   See ~/.claude/projects/-Users-rtangorra/memory/project_clout_brand_research.md
    ============================================================ */
 
 @theme {
@@ -42,9 +119,9 @@
   --spacing-16: 4rem;
   --spacing-24: 6rem;
 
-  /* Type stack — system fallback until licensed kit is loaded */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "SF Pro Display",
-               "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Type stack */
+  --font-sans: 'Grift', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --font-display: 'Jitzu', ui-serif, Georgia, serif;
   --font-serif: ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
