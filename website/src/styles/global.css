@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 /* ============================================================
@@ -84,18 +85,19 @@
    ============================================================ */
 
 @theme {
-  /* Brand */
-  --color-brand-deep:    #004146;
-  --color-brand:         #018076;
-  --color-brand-bright:  #03BFB5;
-  --color-brand-warmth:  #C4572A;
+  /* Brand — Deep Reserve (Primary), Signal (Secondary), Copper Seal (Accent) */
+  --color-brand-deep:    #004045;   /* Deep Reserve — headlines, primary surfaces */
+  --color-brand:         #004045;   /* Deep Reserve — primary interactive */
+  --color-brand-bright:  #03BFB5;   /* Signal — CTAs, highlights, interactive states (use sparingly) */
+  --color-brand-warmth:  #C45729;   /* Copper Seal — eyebrows, rules, finishing touch (never dominant) */
 
   /* Neutrals */
-  --color-ink:           #1A1F22;
+  --color-ink:           #1A1F21;   /* Graphite — body text, dark surfaces */
   --color-ink-soft:      #2E3338;
   --color-mid:           #949398;
   --color-line:          #D9DEE2;
-  --color-surface:       #EFF5F9;
+  --color-surface:       #F0F5FA;   /* Porcelain — default light background */
+  --color-silk:          #F2F2F5;   /* Silk — cards, secondary surfaces, dividers */
   --color-paper:         #FFFFFF;
 
   /* Type scale (rem) */
@@ -120,10 +122,11 @@
   --spacing-24: 6rem;
 
   /* Type stack */
-  --font-sans: 'Grift', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --font-sans:    'Grift', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
   --font-display: 'Jitzu', ui-serif, Georgia, serif;
-  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
-  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  --font-accent:  'Open Sans', 'Grift', ui-sans-serif, sans-serif; /* eyebrows, CTAs, callouts — always ALL-CAPS, tracking 0.1em */
+  --font-serif:   ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   /* Radius */
   --radius-sm: 4px;
@@ -181,8 +184,8 @@ body {
 
 /* Typography defaults */
 h1, h2, h3, h4 {
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.2;
   color: var(--color-ink);
 }
@@ -194,8 +197,8 @@ a {
   transition: color 120ms ease, text-decoration-color 120ms ease;
 }
 a:hover {
-  color: var(--color-brand-deep);
-  text-decoration-color: var(--color-brand-deep);
+  color: color-mix(in srgb, var(--color-brand) 70%, black);
+  text-decoration-color: color-mix(in srgb, var(--color-brand) 70%, black);
 }
 
 /* Code / mono */
@@ -333,41 +336,52 @@ code, pre, kbd {
   text-decoration-color: var(--color-brand);
 }
 
+/* Primary CTA — Deep Reserve bg, white text (authoritative/institutional) */
 .cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius-md);
   background: var(--color-brand);
   color: var(--color-paper);
-  font-weight: 600;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: background 120ms ease;
   border: 1px solid var(--color-brand);
 }
 .cta-primary:hover {
-  background: var(--color-brand-deep);
+  background: color-mix(in srgb, var(--color-brand) 80%, black);
   color: var(--color-paper);
-  border-color: var(--color-brand-deep);
+  border-color: color-mix(in srgb, var(--color-brand) 80%, black);
 }
 
+/* Secondary CTA — Signal (teal) bg, dark text (action/velocity moment) */
 .cta-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--color-brand-deep);
-  font-weight: 600;
+  background: var(--color-brand-bright);
+  color: var(--color-ink);
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--color-brand-bright);
   transition: background 120ms ease, color 120ms ease;
 }
 .cta-secondary:hover {
-  background: var(--color-brand);
+  background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
   color: var(--color-paper);
+  border-color: color-mix(in srgb, var(--color-brand-bright) 80%, black);
 }
