@@ -122,9 +122,9 @@
   --spacing-24: 6rem;
 
   /* Type stack */
-  --font-sans:    'Grift', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --font-sans:    'Open Sans', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
   --font-display: 'Jitzu', ui-serif, Georgia, serif;
-  --font-accent:  'Open Sans', 'Grift', ui-sans-serif, sans-serif; /* eyebrows, CTAs, callouts — always ALL-CAPS, tracking 0.1em */
+  --font-accent:  'Open Sans', ui-sans-serif, sans-serif; /* eyebrows, CTAs, callouts — always ALL-CAPS, tracking 0.1em */
   --font-serif:   ui-serif, Georgia, "Times New Roman", serif;
   --font-mono:    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 
@@ -336,52 +336,146 @@ code, pre, kbd {
   text-decoration-color: var(--color-brand);
 }
 
+/* ============================================================
+   Brand pattern — spark marks tile, used on Deep Reserve sections
+   ============================================================ */
+
+/* Spark pattern overlay div — place inside a position:relative section */
+.spark-tile {
+  position: absolute;
+  inset: -35%;
+  background-image: url('/brand/pattern-sparks.svg');
+  background-size: 72px 72px;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(35deg);
+  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 80% 20%, black 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 65% 60% at 80% 20%, black 0%, transparent 70%);
+}
+
+/* ============================================================
+   Global eyebrow — Open Sans Bold, ALL CAPS, Copper Seal
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-brand-warmth);
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CTA variants
+   ============================================================ */
+
 /* Primary CTA — Deep Reserve bg, white text (authoritative/institutional) */
 .cta-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  padding: 0.75rem 1.5rem;
+  padding: 0.8125rem 1.75rem;
   border-radius: var(--radius-md);
-  background: var(--color-brand);
+  background: var(--color-brand-deep);
   color: var(--color-paper);
   font-family: var(--font-accent);
   font-weight: 700;
-  font-size: var(--text-small);
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 120ms ease;
-  border: 1px solid var(--color-brand);
+  transition: background 150ms ease;
+  border: none;
 }
 .cta-primary:hover {
-  background: color-mix(in srgb, var(--color-brand) 80%, black);
+  background: color-mix(in srgb, var(--color-brand-deep) 82%, black);
   color: var(--color-paper);
-  border-color: color-mix(in srgb, var(--color-brand) 80%, black);
 }
 
-/* Secondary CTA — Signal (teal) bg, dark text (action/velocity moment) */
-.cta-secondary {
+/* Signal CTA — bright teal bg, dark text (velocity/action moments) */
+.cta-signal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  padding: 0.75rem 1.5rem;
+  padding: 0.8125rem 1.75rem;
   border-radius: var(--radius-md);
   background: var(--color-brand-bright);
   color: var(--color-ink);
   font-family: var(--font-accent);
   font-weight: 700;
-  font-size: var(--text-small);
-  letter-spacing: 0.08em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid var(--color-brand-bright);
-  transition: background 120ms ease, color 120ms ease;
+  transition: background 150ms ease, color 150ms ease;
+  border: none;
+}
+.cta-signal:hover {
+  background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
+  color: var(--color-paper);
+}
+
+/* Ghost CTA — white outline, for use on dark Deep Reserve backgrounds */
+.cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: 0.8125rem 1.75rem;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+}
+.cta-ghost:hover {
+  border-color: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.08);
+  color: var(--color-paper);
+}
+
+/* Secondary CTA — Signal bg (legacy alias kept for existing usage) */
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: 0.8125rem 1.75rem;
+  border-radius: var(--radius-md);
+  background: var(--color-brand-bright);
+  color: var(--color-ink);
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  transition: background 150ms ease, color 150ms ease;
 }
 .cta-secondary:hover {
   background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
   color: var(--color-paper);
-  border-color: color-mix(in srgb, var(--color-brand-bright) 80%, black);
 }

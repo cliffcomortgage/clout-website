@@ -9,7 +9,7 @@ const featuredProducts = [...tier1Products, ...tier2Products];
 <header class="site-header">
   <div class="header-row">
     <a href="/" class="brand" aria-label={`${SITE.name} home`}>
-      <img src="/brand/logo-primary.svg" alt={`${SITE.name} logo`} width="180" height="51" />
+      <img src="/brand/logo-mono-white.svg" alt={`${SITE.name} logo`} width="192" height="54" />
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
@@ -71,7 +71,7 @@ const featuredProducts = [...tier1Products, ...tier2Products];
 
     <div class="header-cta">
       <a href={`tel:${SITE.phone}`} class="phone-link">{SITE.phoneDisplay}</a>
-      <a href="/contact/" class="cta-primary">Get pre-qualified</a>
+      <a href="/contact/" class="header-btn">Get pre-qualified</a>
     </div>
   </div>
 </header>
@@ -81,30 +81,37 @@ const featuredProducts = [...tier1Products, ...tier2Products];
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--color-paper);
-    border-bottom: 1px solid var(--color-line);
+    background: var(--color-brand-deep);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
   .header-row {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0.875rem 1.5rem;
+    padding: 0.875rem 2rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
   }
+
   .brand {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
+    flex-shrink: 0;
   }
-  .brand img { display: block; height: 36px; width: auto; }
+  .brand img {
+    display: block;
+    height: 19px;
+    width: auto;
+  }
 
-  .primary-nav { font-size: 0.96rem; }
+  .primary-nav { font-size: 0.9375rem; }
   .primary-nav ul {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.125rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -113,8 +120,8 @@ const featuredProducts = [...tier1Products, ...tier2Products];
   .primary-nav a,
   .primary-nav button {
     display: inline-block;
-    padding: 0.625rem 0.875rem;
-    color: var(--color-ink-soft);
+    padding: 0.5rem 0.875rem;
+    color: rgba(255, 255, 255, 0.72);
     background: transparent;
     border: 0;
     font: inherit;
@@ -122,28 +129,33 @@ const featuredProducts = [...tier1Products, ...tier2Products];
     cursor: pointer;
     text-decoration: none;
     border-radius: var(--radius-sm);
+    transition: color 120ms ease, background 120ms ease;
+    white-space: nowrap;
   }
   .primary-nav a:hover,
   .primary-nav button:hover {
-    color: var(--color-brand-deep);
-    background: var(--color-surface);
+    color: var(--color-paper);
+    background: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
   }
 
   .has-menu { position: relative; }
   .menu-panel {
     position: absolute;
-    top: calc(100% + 6px);
+    top: calc(100% + 10px);
     left: 0;
-    min-width: 540px;
+    min-width: 560px;
     background: var(--color-paper);
     border: 1px solid var(--color-line);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 12px 32px -8px rgba(0,0,0,0.08);
+    border-radius: var(--radius-xl);
+    box-shadow:
+      0 20px 60px -16px rgba(0, 0, 0, 0.22),
+      0 4px 16px -4px rgba(0, 0, 0, 0.1);
     padding: 1.25rem;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-4px);
-    transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+    transform: translateY(-6px);
+    transition: opacity 150ms ease, transform 150ms ease, visibility 150ms ease;
   }
   .has-menu:hover .menu-panel,
   .has-menu:focus-within .menu-panel {
@@ -154,66 +166,112 @@ const featuredProducts = [...tier1Products, ...tier2Products];
   .menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.25rem 1rem;
+    gap: 0.25rem 0.75rem;
   }
-  .menu-grid-states { grid-template-columns: 1fr 1fr 1fr; }
+  .menu-grid-states { grid-template-columns: repeat(3, 1fr); }
+
   .menu-item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     padding: 0.625rem 0.75rem;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 100ms ease;
   }
-  .menu-name { font-weight: 600; color: var(--color-ink); }
-  .menu-desc { font-size: 0.8125rem; color: var(--color-mid); line-height: 1.4; }
+  .menu-item:hover { background: var(--color-surface); }
+
+  .menu-name {
+    font-weight: 600;
+    color: var(--color-ink);
+    font-size: 0.9375rem;
+  }
+  .menu-desc {
+    font-size: 0.8125rem;
+    color: var(--color-mid);
+    line-height: 1.4;
+  }
+
   .menu-foot {
     border-top: 1px solid var(--color-line);
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     text-align: right;
   }
-  .menu-foot a { color: var(--color-brand-deep); font-weight: 600; }
+  .menu-foot a {
+    color: var(--color-brand-deep);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  .menu-foot a:hover { text-decoration: underline; }
 
-  /* Partner Portal trigger — styled as an outlined button to distinguish from
-     standard nav items, signaling it leads to broker-only tools. */
   .nav-portal-trigger {
-    color: var(--color-brand-deep) !important;
-    border: 1px solid var(--color-line) !important;
+    color: var(--color-brand-bright) !important;
+    border: 1px solid rgba(3, 191, 181, 0.3) !important;
     margin-left: 0.25rem;
   }
-  .nav-portal-trigger:hover {
-    border-color: var(--color-brand) !important;
-    background: var(--color-surface) !important;
+  .nav-portal-trigger:hover,
+  .has-menu:hover .nav-portal-trigger,
+  .has-menu:focus-within .nav-portal-trigger {
+    color: var(--color-brand-bright) !important;
+    background: rgba(3, 191, 181, 0.1) !important;
+    border-color: rgba(3, 191, 181, 0.5) !important;
   }
-  .has-menu:focus-within .nav-portal-trigger,
-  .has-menu:hover .nav-portal-trigger {
-    border-color: var(--color-brand) !important;
-    background: var(--color-surface) !important;
-  }
-  /* Portal dropdown — anchor to right edge of trigger so it doesn't run off-screen */
   .menu-panel-portal {
     left: auto;
     right: 0;
     min-width: 480px;
   }
-  .menu-grid-portal {
-    grid-template-columns: 1fr;
-  }
+  .menu-grid-portal { grid-template-columns: 1fr; }
 
   .header-cta {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
+    flex-shrink: 0;
   }
   .phone-link {
-    color: var(--color-ink);
-    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    font-size: 0.9375rem;
     text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 120ms ease;
+    white-space: nowrap;
   }
-  .phone-link:hover { color: var(--color-brand-deep); }
+  .phone-link:hover { color: var(--color-paper); }
 
-  @media (max-width: 960px) {
-    .primary-nav, .phone-link { display: none; }
+  .header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-md);
+    background: var(--color-brand-bright);
+    color: var(--color-ink);
+    font-family: var(--font-accent);
+    font-weight: 700;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .header-btn:hover {
+    background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
+    color: var(--color-paper);
+  }
+
+  @media (max-width: 1024px) {
+    .primary-nav,
+    .phone-link { display: none; }
     .header-row { grid-template-columns: auto 1fr; }
+    .header-cta { justify-content: flex-end; }
+  }
+  @media (max-width: 480px) {
+    .header-row { padding: 0.875rem 1.25rem; }
+    .brand img { height: 32px; }
   }
 </style>
