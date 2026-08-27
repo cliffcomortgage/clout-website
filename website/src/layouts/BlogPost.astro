@@ -11,7 +11,7 @@
  */
 
 import Layout from './Layout.astro';
-import { SITE } from '../data/site';
+import { SITE, STATES } from '../data/site';
 import { jsonLd, articleSchema, faqSchema } from '../data/schema';
 import { blogPostUrl, BLOG_ROOT, BLOG_PATH } from '../data/blog';
 
@@ -147,7 +147,7 @@ const displayDate =
         and rates are determined by program guidelines in effect on the lock date and
         by underwriting approval. {SITE.legalName} · NMLS
         <a href={SITE.nmlsUrl} target="_blank" rel="noopener">#{SITE.nmlsId}</a> ·
-        Equal Housing Lender · Licensed in NY · NJ · PA · FL · CT · TX. Article last
+        Equal Housing Lender · Licensed in {STATES.map((s) => s.abbr).join(' · ')}. Article last
         updated <time datetime={dateModified}>{displayDate}</time>.
       </p>
     </div>

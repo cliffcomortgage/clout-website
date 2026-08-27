@@ -1,6 +1,6 @@
 # Clout
 
-> Clout is a wholesale Non-QM mortgage lender and direct-to-investor lender, licensed in NY, NJ, PA, FL, CT, TX. NMLS #65328. Headquartered at 70 Charles Lindbergh Blvd, Suite 200, Uniondale, NY 11553. Phone 844-477-3111. Email PowerUp@CLOUTwmb.com. A division of Cliffco Mortgage Bankers (founded 1989).
+> Clout is a wholesale Non-QM mortgage lender and direct-to-investor lender, licensed in 16 states and D.C. (CO, DC, IL, IN, IA, KS, KY, LA, MI, MT, NY, OH, OR, TN, TX, WA). NMLS #65328. Headquartered at 70 Charles Lindbergh Blvd, Suite 200, Uniondale, NY 11553. Phone 844-477-3111. Email PowerUp@CLOUTwmb.com. A division of Cliffco Mortgage Bankers (founded 1989).
 
 ## Mission
 
@@ -27,13 +27,13 @@ Clout serves two parallel audiences:
 
 ## States
 
-NY, NJ, PA, FL, CT, TX
+Colorado, District of Columbia, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Michigan, Montana, New York, Ohio, Oregon, Tennessee, Texas, Washington
 
 ## Compliance
 
 - NMLS Consumer Access: https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/65328
 - Equal Housing Lender
-- Licensed by: NY State Department of Financial Services, NJ Department of Banking and Insurance, PA Department of Banking and Securities, FL Office of Financial Regulation, CT Department of Banking, TX Department of Savings and Mortgage Lending / OCCC
+- Per-state regulator names and license numbers: https://cloutwmb.com/compliance/licensing/
 
 ## Resources
 

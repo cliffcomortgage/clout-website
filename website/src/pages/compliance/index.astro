@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StubPage from '../../components/StubPage.astro';
-import { SITE } from '../../data/site';
+import { SITE, STATES } from '../../data/site';
 
 const pageUrl = `${SITE.url}/compliance/`;
 const breadcrumbs = [
@@ -19,7 +19,7 @@ const breadcrumbs = [
   <StubPage
     eyebrow="Compliance"
     title="Clout compliance & disclosures."
-    lead={`Clout operates under NMLS #${SITE.nmlsId} with state licensing in NY, NJ, PA, FL, CT, and TX. This is the home for our regulatory disclosures, privacy policy, accessibility statement, TCPA compliance, fair lending statement, and editorial policy.`}
+    lead={`Clout operates under NMLS #${SITE.nmlsId} with state licensing in ${STATES.map((s) => s.name).join(', ')}. This is the home for our regulatory disclosures, privacy policy, accessibility statement, TCPA compliance, fair lending statement, and editorial policy.`}
     breadcrumbs={[{ label: 'Compliance' }]}
     highlights={[
       'State licensing — full enumeration by state regulator',

@@ -10,19 +10,19 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Clout Locations — Licensed in NY, NJ, PA, FL, CT, TX"
-  description="Clout serves real estate investors and mortgage brokers across six states: New York, New Jersey, Pennsylvania, Florida, Connecticut, and Texas. Local market depth in each."
+  title={`Clout Locations — Licensed in ${STATES.length} States + D.C.`}
+  description={`Clout serves real estate investors and mortgage brokers across ${STATES.length} states and D.C.: ${STATES.map((s) => s.name).join(', ')}. Local market depth in each.`}
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
 >
   <section class="header-band">
     <div class="container">
       <p class="eyebrow">Locations</p>
-      <h1>Six states. Local market depth in each.</h1>
+      <h1>{STATES.length} states and D.C. Local market depth in each.</h1>
       <p class="answer-first">
-        Clout is licensed in New York, New Jersey, Pennsylvania, Florida, Connecticut,
-        and Texas. Each market has its own competitive landscape, investor demographics,
-        REIA ecosystem, and compliance posture — and Clout's local content reflects that.
+        Clout is licensed in {STATES.map((s) => s.name).join(', ')}. Each market has its
+        own competitive landscape, investor demographics, REIA ecosystem, and compliance
+        posture — and Clout's local content reflects that.
       </p>
     </div>
   </section>

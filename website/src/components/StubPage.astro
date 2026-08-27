@@ -5,7 +5,7 @@
  * sitemap, internal linking, and AEO crawling reflect the planned IA.
  */
 
-import { SITE } from '../data/site';
+import { SITE, STATES } from '../data/site';
 
 interface Props {
   eyebrow: string;
@@ -64,7 +64,7 @@ const {
     <p class="compliance-note">
       {SITE.legalName} · NMLS #{SITE.nmlsId} ·
       <a href={SITE.nmlsUrl} target="_blank" rel="noopener">NMLS Consumer Access</a> ·
-      Equal Housing Lender · Licensed in NY · NJ · PA · FL · CT · TX.
+      Equal Housing Lender · Licensed in {STATES.map((s) => s.abbr).join(' · ')}.
     </p>
   </div>
 </article>

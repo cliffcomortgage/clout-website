@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { SITE, PRODUCTS } from '../../data/site';
+import { SITE, PRODUCTS, STATES } from '../../data/site';
 import { faqSchema, jsonLd } from '../../data/schema';
 
 const pageUrl = `${SITE.url}/tpo-connect/`;
@@ -62,28 +62,17 @@ const turnTimes = [
   { program: 'Foreign National', clearToClose: '25–35 days', initialDecision: '3–5 business days' },
 ];
 
-// AE directory — regional desks (no fake people; honest until real bios are added)
+// AE directory — no fake people, no fabricated regional territory splits.
+// Prior version invented Northeast/Florida/Texas desks for the old 6-state footprint;
+// with the confirmed 16-state + D.C. footprint, real territory assignments are unknown,
+// so this stays a single honest entry until Clout ops provides the actual desk structure.
 const aeDesks = [
   {
-    name: 'Northeast desk',
-    coverage: 'NY · NJ · CT · PA',
+    name: 'Wholesale desk',
+    coverage: `${STATES.length} states + D.C.`,
     phone: SITE.phoneDisplay,
     email: SITE.email,
-    note: 'Long Island HQ. Primary desk for NYC, Brooklyn, Jersey City, Newark, Stamford, Philadelphia.',
-  },
-  {
-    name: 'Florida desk',
-    coverage: 'FL',
-    phone: SITE.phoneDisplay,
-    email: SITE.email,
-    note: 'Miami, Orlando, Tampa, Jacksonville, Naples. Foreign National and DSCR specialists.',
-  },
-  {
-    name: 'Texas desk',
-    coverage: 'TX',
-    phone: SITE.phoneDisplay,
-    email: SITE.email,
-    note: 'Houston, Dallas-Fort Worth, Austin, San Antonio, El Paso. DSCR and Bank Statement volume desk.',
+    note: 'Long Island HQ, headquarters for the wholesale channel. Every partner gets a named account executive on assignment — call or email to be routed to yours.',
   },
 ];
 
@@ -125,22 +114,22 @@ const scenarios = [
     ],
   },
   {
-    program: 'Bank Statement · Miami, FL',
-    headline: '24-mo bank statement refi for Brickell condo owner',
+    program: 'Bank Statement · Chicago, IL',
+    headline: '24-mo bank statement refi for River North condo owner',
     facts: [
       ['Borrower', 'Sole proprietor consultant, $312K avg deposits'],
-      ['Property', 'Brickell condo, primary residence'],
+      ['Property', 'River North condo, primary residence'],
       ['DTI (calculated)', '38%'],
       ['LTV', '75% cash-out'],
       ['Close', '22 days from submission'],
     ],
   },
   {
-    program: 'Foreign National · Naples, FL',
-    headline: 'Canadian national DSCR on Gulf-front rental',
+    program: 'Foreign National · Nashville, TN',
+    headline: 'Canadian national DSCR on short-term rental',
     facts: [
       ['Borrower', 'Canadian citizen, no SSN, 730 FICO equivalent (Equifax CA)'],
-      ['Property', 'Naples short-term rental, $1.4M'],
+      ['Property', 'East Nashville short-term rental, $1.4M'],
       ['DSCR', '1.18 (AirDNA + 12-mo rental history)'],
       ['LTV', '65%'],
       ['Close', '29 days from submission'],
@@ -153,7 +142,7 @@ const faqs = [
   {
     question: 'What is Clout TPO Connect?',
     answer:
-      'Clout TPO Connect is the wholesale partner portal for mortgage brokers placing Non-QM loans with Clout Wholesale Mortgage Bankers (NMLS #65328). It provides live pricing, eDoc file submission, pipeline visibility, conditions tracking, guideline access, and direct contact with a named account executive. Brokers use TPO Connect to register, submit, and track Non-QM files across 10 programs in NY, NJ, PA, FL, CT, and TX.',
+      'Clout TPO Connect is the wholesale partner portal for mortgage brokers placing Non-QM loans with Clout Wholesale Mortgage Bankers (NMLS #65328). It provides live pricing, eDoc file submission, pipeline visibility, conditions tracking, guideline access, and direct contact with a named account executive. Brokers use TPO Connect to register, submit, and track Non-QM files across 10 programs in Clout\'s 16-state and D.C. footprint.',
   },
   {
     question: 'How do I become a Clout wholesale broker partner?',
@@ -183,7 +172,7 @@ const faqs = [
   {
     question: 'What states does Clout TPO Connect cover?',
     answer:
-      'Clout is licensed to originate Non-QM loans in New York, New Jersey, Pennsylvania, Florida, Connecticut, and Texas under NMLS #65328. Brokers may submit files for properties located in any of these six states. Clout does not currently operate in California or other unlicensed states.',
+      `Clout is licensed to originate Non-QM loans in ${STATES.map((s) => s.name).join(', ')} under NMLS #65328. Brokers may submit files for properties located in any of these ${STATES.length} jurisdictions. Clout does not currently operate in states outside this list.`,
   },
   {
     question: 'Can I run a scenario before submitting a full file?',
@@ -211,11 +200,9 @@ const serviceSchema = {
   alternateName: ['Clout Wholesale Partner Portal', 'Clout Broker Portal'],
   serviceType: 'Wholesale Non-QM Mortgage Origination Channel',
   description:
-    'Wholesale Non-QM partner portal for mortgage brokers. Provides live pricing, eDoc file submission, pipeline tracking, conditions management, guideline library, and direct account-executive access for DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier, and seven other Non-QM programs across NY, NJ, PA, FL, CT, TX.',
+    'Wholesale Non-QM partner portal for mortgage brokers. Provides live pricing, eDoc file submission, pipeline tracking, conditions management, guideline library, and direct account-executive access for DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier, and seven other Non-QM programs across a 16-state and D.C. footprint.',
   provider: { '@id': `${SITE.url}#organization` },
-  areaServed: ['New York', 'New Jersey', 'Pennsylvania', 'Florida', 'Connecticut', 'Texas'].map(
-    (name) => ({ '@type': 'State', name }),
-  ),
+  areaServed: STATES.map((s) => ({ '@type': 'State', name: s.name })),
   audience: {
     '@type': 'BusinessAudience',
     audienceType: 'Licensed mortgage brokers and brokerages (NMLS-registered)',
@@ -238,7 +225,7 @@ const serviceSchema = {
 
 <Layout
   title="Clout TPO Connect — Wholesale Non-QM Partner Portal for Mortgage Brokers"
-  description="Clout TPO Connect is the wholesale Non-QM partner portal for licensed mortgage brokers. Sign in for live pricing, eDoc submission, pipeline tracking, and direct AE access. 10 Non-QM programs across NY, NJ, PA, FL, CT, TX. NMLS #65328."
+  description="Clout TPO Connect is the wholesale Non-QM partner portal for licensed mortgage brokers. Sign in for live pricing, eDoc submission, pipeline tracking, and direct AE access. 10 Non-QM programs across 16 states + D.C. NMLS #65328."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(serviceSchema), jsonLd(faqSchema(faqs))]}
@@ -251,7 +238,7 @@ const serviceSchema = {
         Clout TPO Connect is the wholesale partner portal mortgage brokers use to place
         Non-QM files with Clout. Sign in for live wholesale pricing, eDoc submission,
         pipeline visibility, conditions tracking, and direct contact with a named
-        account executive. Ten Non-QM programs. Six states. Typical close: 15–25 days.
+        account executive. Ten Non-QM programs. 16 states + D.C. Typical close: 15–25 days.
       </p>
       <div class="hero-cta">
         <a href={encompassUrl} target="_blank" rel="noopener" class="cta-primary">
@@ -272,7 +259,7 @@ const serviceSchema = {
         <h2>TPO Connect at a glance</h2>
         <ul>
           <li><span class="label">Programs</span><span class="value">10 Non-QM</span></li>
-          <li><span class="label">States covered</span><span class="value">NY · NJ · PA · FL · CT · TX</span></li>
+          <li><span class="label">States covered</span><span class="value">16 states + D.C.</span></li>
           <li><span class="label">Loan amounts</span><span class="value">$100K – $5M</span></li>
           <li><span class="label">Min FICO (standard)</span><span class="value">620</span></li>
           <li><span class="label">Rate sheet refresh</span><span class="value">Daily, by 9:30 AM ET</span></li>
@@ -538,13 +525,12 @@ const serviceSchema = {
       <p class="compliance-row">
         Clout Wholesale Mortgage Bankers is a division of Cliffco Mortgage Bankers.
         NMLS <a href={SITE.nmlsUrl} rel="noopener" target="_blank">#{SITE.nmlsId}</a>.
-        Equal Housing Lender. Licensed by the New York State Department of Financial
-        Services, New Jersey Department of Banking and Insurance, Pennsylvania
-        Department of Banking and Securities, Florida Office of Financial Regulation,
-        Connecticut Department of Banking, and Texas Department of Savings and Mortgage
-        Lending / OCCC. This portal is available to NMLS-registered mortgage brokers
-        and brokerages only. Programs, rates, and turn-times are subject to change
-        without notice. Page last updated <time datetime={lastUpdatedIso}>{lastUpdatedDisplay}</time>.
+        Equal Housing Lender. Licensed in {STATES.map((s) => s.name).join(', ')}. Per-state
+        regulator names and license numbers are published on the
+        <a href="/compliance/licensing/">state licensing page</a>. This portal is
+        available to NMLS-registered mortgage brokers and brokerages only. Programs,
+        rates, and turn-times are subject to change without notice. Page last
+        updated <time datetime={lastUpdatedIso}>{lastUpdatedDisplay}</time>.
       </p>
     </div>
   </section>

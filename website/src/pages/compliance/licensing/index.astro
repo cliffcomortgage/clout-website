@@ -12,7 +12,7 @@ const breadcrumbs = [
 
 <Layout
   title="State Licensing"
-  description={`Clout state licensing under NMLS #${SITE.nmlsId}. Licensed in NY, NJ, PA, FL, CT, and TX. State-specific regulator and disclosure details.`}
+  description={`Clout state licensing under NMLS #${SITE.nmlsId}. Licensed in ${STATES.map((s) => s.name).join(', ')}. State-specific regulator and disclosure details.`}
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
 >
@@ -29,8 +29,8 @@ const breadcrumbs = [
       <p class="eyebrow">Compliance · State Licensing</p>
       <h1>Clout state licensing.</h1>
       <p class="answer-first">
-        Clout operates under NMLS #{SITE.nmlsId} and holds active licensing in six
-        states. Below is the canonical list with regulator + license-number placeholders
+        Clout operates under NMLS #{SITE.nmlsId} and holds active licensing in {STATES.length}
+        states and D.C. Below is the canonical list with regulator + license-number placeholders
         — full state-specific disclosures available on each state's page.
       </p>
 

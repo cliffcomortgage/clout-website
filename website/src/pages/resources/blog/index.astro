@@ -1,6 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import { SITE } from '../../../data/site';
+import { SITE, STATES } from '../../../data/site';
 import { jsonLd } from '../../../data/schema';
 import { BLOG_POSTS, BLOG_CATEGORIES, BLOG_ROOT, blogPostUrl, blogPostPath } from '../../../data/blog';
 
@@ -131,7 +131,7 @@ const blogSchema = {
         Blog content is educational and does not constitute regulatory or legal advice,
         program guidelines, or a commitment to lend. {SITE.legalName} · NMLS
         <a href={SITE.nmlsUrl} target="_blank" rel="noopener">#{SITE.nmlsId}</a> ·
-        Equal Housing Lender · Licensed in NY · NJ · PA · FL · CT · TX.
+        Equal Housing Lender · Licensed in {STATES.map((s) => s.abbr).join(' · ')}.
       </p>
     </div>
   </section>

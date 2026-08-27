@@ -47,7 +47,7 @@ const article = articleSchema({
 
 <Layout
   title={product.name}
-  description={`${product.name}: ${product.shortDescription} Licensed in NY, NJ, PA, FL, CT, TX. NMLS #${SITE.nmlsId}.`}
+  description={`${product.name}: ${product.shortDescription} Licensed in 16 states + D.C. NMLS #${SITE.nmlsId}.`}
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(loanSchema), jsonLd(article)]}
@@ -71,9 +71,9 @@ const article = articleSchema({
       </p>
 
       <p class="answer-first">
-        {product.shortDescription} Clout offers this program across all six licensed
-        states (NY, NJ, PA, FL, CT, TX) for both wholesale broker partners and
-        direct-to-investor borrowers where the program permits.
+        {product.shortDescription} Clout offers this program across all {STATES.length} licensed
+        states and D.C. for both wholesale broker partners and direct-to-investor
+        borrowers where the program permits.
       </p>
 
       <div class="hero-cta">

@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'Which states is Clout licensed in?',
     answer:
-      'Clout is licensed in New York, New Jersey, Pennsylvania, Florida, Connecticut, and Texas under NMLS #65328. We are not currently licensed for activity in California.',
+      `Clout is licensed in ${STATES.map((s) => s.name).join(', ')} under NMLS #65328. We are not currently licensed for activity in other states.`,
   },
   {
     question: 'How fast can Clout close a Non-QM loan?',
@@ -44,7 +44,7 @@ const faqs = [
 
 <Layout
   title={`${SITE.name} — Wholesale Non-QM lender for brokers and real estate investors`}
-  description="Clout is a wholesale Non-QM mortgage lender and direct-to-investor lender licensed in NY, NJ, PA, FL, CT, TX. DSCR, bank statement, 1099, foreign national, and asset qualifier loans built for brokers and investors. NMLS #65328."
+  description="Clout is a wholesale Non-QM mortgage lender and direct-to-investor lender licensed in 16 states and D.C. DSCR, bank statement, 1099, foreign national, and asset qualifier loans built for brokers and investors. NMLS #65328."
   extraSchema={[jsonLd(faqSchema(faqs))]}
 >
 
@@ -58,7 +58,7 @@ const faqs = [
         <span class="hero-accent">accelerated.</span>
       </h1>
       <p class="hero-lead">
-        Clout funds Non-QM mortgages across NY, NJ, PA, FL, CT, and TX — DSCR, bank
+        Clout funds Non-QM mortgages across 16 states and D.C. — DSCR, bank
         statement, 1099, foreign national, and asset qualifier programs. Wholesale
         channel for brokers. Direct channel for real estate investors.
         <strong>NMLS #65328.</strong>
@@ -77,8 +77,8 @@ const faqs = [
           <dd>Non-QM programs</dd>
         </div>
         <div>
-          <dt>6</dt>
-          <dd>States licensed</dd>
+          <dt>{STATES.length}</dt>
+          <dd>States licensed + D.C.</dd>
         </div>
         <div>
           <dt>24–72h</dt>
@@ -98,7 +98,7 @@ const faqs = [
         </li>
         <li>
           <span class="strip-label">Licensed</span>
-          <span class="strip-value">NY · NJ · PA · FL · CT · TX</span>
+          <span class="strip-value">16 states + D.C.</span>
         </li>
         <li>
           <span class="strip-label">Channels</span>

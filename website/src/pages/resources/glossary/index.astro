@@ -1,6 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import { SITE } from '../../../data/site';
+import { SITE, STATES } from '../../../data/site';
 import { jsonLd } from '../../../data/schema';
 
 const pageUrl = `${SITE.url}/resources/glossary/`;
@@ -112,7 +112,7 @@ const terms: Term[] = [
     slug: 'cfpb',
     term: 'CFPB (Consumer Financial Protection Bureau)',
     definition:
-      'The federal agency created by the Dodd-Frank Act that supervises consumer-financial-services compliance, including mortgage origination. The CFPB writes the QM rule, ATR rule, RESPA Reg X, TILA Reg Z, and equal-credit Reg B. Clout (NMLS #65328) operates under CFPB-administered rules across all six licensed states.',
+      `The federal agency created by the Dodd-Frank Act that supervises consumer-financial-services compliance, including mortgage origination. The CFPB writes the QM rule, ATR rule, RESPA Reg X, TILA Reg Z, and equal-credit Reg B. Clout (NMLS #65328) operates under CFPB-administered rules across all ${STATES.length} licensed states and D.C.`,
   },
   {
     slug: 'clear-to-close',
@@ -190,7 +190,7 @@ const terms: Term[] = [
     slug: 'equal-housing-lender',
     term: 'Equal Housing Lender',
     definition:
-      'A lender that has pledged compliance with the Fair Housing Act and ECOA — not to discriminate in extending housing-related credit. The Equal Housing Lender designation is required on mortgage advertising. Clout is an Equal Housing Lender across all six licensed states.',
+      `A lender that has pledged compliance with the Fair Housing Act and ECOA — not to discriminate in extending housing-related credit. The Equal Housing Lender designation is required on mortgage advertising. Clout is an Equal Housing Lender across all ${STATES.length} licensed states and D.C.`,
   },
   {
     slug: 'fico',
@@ -202,7 +202,7 @@ const terms: Term[] = [
     slug: 'foreign-national-mortgage',
     term: 'Foreign National Mortgage',
     definition:
-      'A Non-QM program for non-US citizens (no US Social Security Number) investing in US real estate. Qualifies on international credit equivalent, foreign income documentation, and asset reserves. Clout offers Foreign National DSCR loans — common use case: Canadian, UK, or Latin American investors buying Florida vacation rentals.',
+      'A Non-QM program for non-US citizens (no US Social Security Number) investing in US real estate. Qualifies on international credit equivalent, foreign income documentation, and asset reserves. Clout offers Foreign National DSCR loans — common use case: Canadian, UK, or Latin American investors buying US rental property.',
     seeAlso: [{ label: 'Foreign National program', href: '/loan-options/foreign-national/' }],
   },
   {
@@ -264,7 +264,7 @@ const terms: Term[] = [
     slug: 'non-agency-second-home',
     term: 'Non-Agency Second Home',
     definition:
-      'A Non-QM program for second-home or vacation-property purchases that fall outside Fannie Mae\'s second-home guidelines — often by property type (short-term-rental zoning), occupancy pattern, or loan size. Clout originates Non-Agency Second Home loans for Florida, Long Island, and Texas vacation markets.',
+      'A Non-QM program for second-home or vacation-property purchases that fall outside Fannie Mae\'s second-home guidelines — often by property type (short-term-rental zoning), occupancy pattern, or loan size. Clout originates Non-Agency Second Home loans for Colorado, Long Island, and Texas vacation markets.',
     seeAlso: [{ label: 'Non-Agency Second Home program', href: '/loan-options/non-agency-second-home/' }],
   },
   {
@@ -419,7 +419,7 @@ const terms: Term[] = [
     slug: 'wholesale-channel',
     term: 'Wholesale Channel',
     definition:
-      'The mortgage-origination channel in which licensed mortgage brokers place loans with a wholesale lender on behalf of borrowers, rather than the lender\'s own loan officers originating directly. Distinguished from retail and correspondent channels. Clout operates a wholesale Non-QM channel for brokers across NY, NJ, PA, FL, CT, TX.',
+      `The mortgage-origination channel in which licensed mortgage brokers place loans with a wholesale lender on behalf of borrowers, rather than the lender's own loan officers originating directly. Distinguished from retail and correspondent channels. Clout operates a wholesale Non-QM channel for brokers across ${STATES.length} states and D.C.`,
     seeAlso: [{ label: 'For brokers', href: '/brokers/' }],
   },
   {

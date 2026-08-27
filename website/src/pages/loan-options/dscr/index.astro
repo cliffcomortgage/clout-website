@@ -27,18 +27,18 @@ const tldr = [
 const scenarios = [
   {
     eyebrow: 'Houston, TX · Single-family rental',
-    title: 'Out-of-state NJ investor buying 1.05 DSCR Spring TX rental',
-    profile: 'NJ-based investor, 740 FICO, 4 existing rentals',
+    title: 'Out-of-state Colorado investor buying 1.05 DSCR Spring TX rental',
+    profile: 'Colorado-based investor, 740 FICO, 4 existing rentals',
     property: '3BR SFR, Spring TX, $310K purchase, $2,450/mo projected rent',
     loan: '$248K, 80% LTV, 30Y fixed, IO option declined',
     dscr: '1.05 (qualifying minimum for tier)',
     close: '17 days from approval',
   },
   {
-    eyebrow: 'Orlando, FL · STR / Disney corridor',
-    title: 'Polk County Airbnb in Davenport, FL',
-    profile: 'Florida LLC, 760 FICO, first STR purchase',
-    property: '4BR townhome, Champion\'s Gate, $485K, AirDNA-validated $58K annual rent',
+    eyebrow: 'Gatlinburg, TN · STR / Smoky Mountains corridor',
+    title: 'Sevier County cabin Airbnb in Gatlinburg, TN',
+    profile: 'Tennessee LLC, 760 FICO, first STR purchase',
+    property: '4BR cabin, near Great Smoky Mountains, $485K, AirDNA-validated $58K annual rent',
     loan: '$364K, 75% LTV, 30Y fixed, IO',
     dscr: '1.22 (validated via AirDNA + 12-mo competitive set)',
     close: '21 days',
@@ -83,7 +83,7 @@ const faqs = [
   {
     question: 'Can I use a DSCR loan for short-term rentals (Airbnb / VRBO)?',
     answer:
-      'Yes. Clout uses AirDNA reports, documented 12-month rent rolls, or comparable-market analysis to establish STR income. Programs are available for Disney-area Florida, Texas Gulf Coast, NY Hamptons, NJ Jersey Shore, and CT shoreline markets.',
+      'Yes. Clout uses AirDNA reports, documented 12-month rent rolls, or comparable-market analysis to establish STR income. Programs are available for Texas Gulf Coast, NY Hamptons, Tennessee\'s Smoky Mountains corridor, and Colorado mountain-town markets.',
   },
   {
     question: 'Are DSCR loans available for first-time investors?',
@@ -98,7 +98,7 @@ const faqs = [
   {
     question: 'How fast does Clout close a DSCR loan?',
     answer:
-      'For clean files, Clout DSCR loans typically close in 15–25 days from approval. Attorney-closing states (NY, NJ, CT) may add 3–5 days. Short-term rental files with AirDNA validation may add 5–7 days for income documentation review.',
+      'For clean files, Clout DSCR loans typically close in 15–25 days from approval. States that require attorney involvement in closing may add 3–5 days — check state-specific guidance on the state licensing page. Short-term rental files with AirDNA validation may add 5–7 days for income documentation review.',
   },
   {
     question: 'Can I get a DSCR loan in an LLC?',
@@ -113,7 +113,7 @@ const faqs = [
   {
     question: 'What states does Clout offer DSCR loans in?',
     answer:
-      'Clout offers DSCR loans in New York, New Jersey, Pennsylvania, Florida, Connecticut, and Texas. Each state has specific licensing disclosures and underwriting nuances (e.g., FL insurance crisis adjustments, NYC co-op eligibility limits, attorney-closing in NY/NJ/CT).',
+      `Clout offers DSCR loans in ${STATES.map((s) => s.name).join(', ')}. Each state has specific licensing disclosures and underwriting nuances (e.g., NYC co-op eligibility limits, attorney-closing in New York) — see the state licensing page for details.`,
   },
   {
     question: 'What\'s the difference between a DSCR loan and a conventional investment property mortgage?',
@@ -205,7 +205,7 @@ const article = articleSchema({
 
 <Layout
   title="DSCR Loans for Real Estate Investors"
-  description="DSCR loans from Clout — qualify on rental cash flow, not W-2s. Programs from 0.75 DSCR, up to $3.5M, 15–25 day close. Available in NY, NJ, PA, FL, CT, TX."
+  description="DSCR loans from Clout — qualify on rental cash flow, not W-2s. Programs from 0.75 DSCR, up to $3.5M, 15–25 day close. Available in 16 states + D.C."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[
@@ -236,7 +236,7 @@ const article = articleSchema({
         A DSCR loan is a Non-QM mortgage that qualifies real estate investors on the
         rental cash flow of the property — not on the borrower's W-2s or tax returns.
         Clout offers DSCR programs from 0.75 DSCR up to $3.5M+, with 15–25 day closings
-        across NY, NJ, PA, FL, CT, and TX.
+        across 16 states and D.C.
       </p>
 
       <div class="hero-cta">
@@ -347,10 +347,10 @@ const article = articleSchema({
 
       <h2 id="states">DSCR loans by state</h2>
       <p>
-        Clout offers DSCR loans across all six licensed states. Each state has unique
-        market characteristics — Texas leads on investor volume, Florida on STR demand,
-        Connecticut on Fairfield County jumbo, and the Northeast on attorney-closing
-        process discipline.
+        Clout offers DSCR loans across all {STATES.length} licensed states and D.C. Each
+        state has unique market characteristics — Texas leads on investor volume,
+        Tennessee and Colorado on STR demand, and New York on attorney-closing process
+        discipline.
       </p>
       <ul class="state-list">
         {STATES.map((s) => (

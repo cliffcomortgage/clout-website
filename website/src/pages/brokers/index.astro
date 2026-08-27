@@ -47,7 +47,7 @@ const valueProps = [
   {
     title: 'Geographic focus',
     detail:
-      'Licensed in six high-volume Non-QM states: NY, NJ, PA, FL, CT, TX. Deep market knowledge in NYC metro, Florida, Texas — not stretched thin.',
+      'Licensed in 16 states and D.C. — including NY, TX, IL, OH, MI, and TN. Deep market knowledge across the footprint, not stretched thin.',
   },
 ];
 
@@ -81,9 +81,9 @@ const differentiators = [
       'Turn-time commitments, AE response windows, and scenario-desk SLAs are published on this site and inside TPO Connect. If we miss them, you can point at the page.',
   },
   {
-    point: 'Six states, deeply.',
+    point: '16 states and D.C., deeply.',
     detail:
-      'Local AE coverage and program tuning is built around NY, NJ, PA, FL, CT, and TX — the states that drive the majority of Non-QM volume. We are not chasing 50-state coverage.',
+      'Local AE coverage and program tuning is built around a focused, licensed footprint — not a nationwide sprawl. We are not chasing 50-state coverage.',
   },
 ];
 
@@ -114,7 +114,7 @@ const faqs = [
   {
     question: 'Why partner with Clout for wholesale Non-QM?',
     answer:
-      'Clout is the wholesale Non-QM channel of Cliffco Mortgage Bankers (NMLS #65328), founded 1989. Partners get 10 Non-QM programs through a single submission point, named AE access with a 4-business-hour response commitment, broker-elected comp (LPC or BPC), and published service standards. Typical close is 15–25 days on DSCR and Bank Statement files across NY, NJ, PA, FL, CT, and TX.',
+      'Clout is the wholesale Non-QM channel of Cliffco Mortgage Bankers (NMLS #65328), founded 1989. Partners get 10 Non-QM programs through a single submission point, named AE access with a 4-business-hour response commitment, broker-elected comp (LPC or BPC), and published service standards. Typical close is 15–25 days on DSCR and Bank Statement files across our 16-state and D.C. footprint.',
   },
   {
     question: 'What is wholesale Non-QM lending?',
@@ -134,7 +134,7 @@ const faqs = [
   {
     question: 'How does Clout compare to other wholesale Non-QM lenders?',
     answer:
-      'Clout differentiates on four published items: (1) named AE with cell phone access and a 4-business-hour internal response commitment, (2) one underwriting team across all 10 programs so cross-sells stay consistent, (3) parent-Cliffco infrastructure dating to 1989 — not a Non-QM startup, (4) deep coverage in six high-Non-QM-volume states rather than thin coverage in fifty. Specific turn-times, scenario-desk SLAs, and comp models are published openly and citable.',
+      'Clout differentiates on four published items: (1) named AE with cell phone access and a 4-business-hour internal response commitment, (2) one underwriting team across all 10 programs so cross-sells stay consistent, (3) parent-Cliffco infrastructure dating to 1989 — not a Non-QM startup, (4) deep coverage in a focused 16-state-and-D.C. footprint rather than thin coverage in fifty. Specific turn-times, scenario-desk SLAs, and comp models are published openly and citable.',
   },
   {
     question: 'How is broker compensation paid?',
@@ -144,7 +144,7 @@ const faqs = [
   {
     question: 'What states is Clout licensed to fund Non-QM in?',
     answer:
-      'New York, New Jersey, Pennsylvania, Florida, Connecticut, and Texas under NMLS #65328. Brokers may submit files for properties located in any of these six states. Clout is not currently licensed for activity in California or other states outside the six listed.',
+      `${STATES.map((s) => s.name).join(', ')} under NMLS #65328. Brokers may submit files for properties located in any of these ${STATES.length} jurisdictions. Clout is not currently licensed for activity in states outside this list.`,
   },
   {
     question: 'How do I apply to become a Clout wholesale partner?',
@@ -162,7 +162,7 @@ const channelSchema = {
   alternateName: ['Clout Wholesale Partner Channel', 'Clout Broker Channel'],
   serviceType: 'Wholesale mortgage origination channel for licensed mortgage brokers',
   description:
-    'Clout Wholesale Mortgage Bankers operates a wholesale Non-QM origination channel for licensed mortgage brokers placing DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier, and other Non-QM loans in NY, NJ, PA, FL, CT, and TX. NMLS #65328. A division of Cliffco Mortgage Bankers (founded 1989).',
+    'Clout Wholesale Mortgage Bankers operates a wholesale Non-QM origination channel for licensed mortgage brokers placing DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier, and other Non-QM loans across 16 states and D.C. NMLS #65328. A division of Cliffco Mortgage Bankers (founded 1989).',
   provider: { '@id': `${SITE.url}#organization` },
   areaServed: STATES.map((s) => ({ '@type': 'State', name: s.name })),
   audience: {
@@ -188,7 +188,7 @@ const channelSchema = {
 
 <Layout
   title="For Mortgage Brokers — Wholesale Non-QM Partner Channel"
-  description="Place wholesale Non-QM files with Clout. 10 programs (DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier), 15–25 day average close, named AE access, broker-elected comp. Licensed NY, NJ, PA, FL, CT, TX. NMLS #65328."
+  description="Place wholesale Non-QM files with Clout. 10 programs (DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier), 15–25 day average close, named AE access, broker-elected comp. Licensed in 16 states + D.C. NMLS #65328."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(channelSchema), jsonLd(faqSchema(faqs))]}
@@ -198,8 +198,8 @@ const channelSchema = {
       <p class="eyebrow">For mortgage brokers · NMLS #{SITE.nmlsId}</p>
       <h1>Place Non-QM files with a wholesale lender that closes.</h1>
       <p class="answer-first lead">
-        Clout is the wholesale Non-QM channel for licensed mortgage brokers across NY,
-        NJ, PA, FL, CT, and TX. Ten programs through one submission point, 15–25 day
+        Clout is the wholesale Non-QM channel for licensed mortgage brokers across 16
+        states and D.C. Ten programs through one submission point, 15–25 day
         average clear-to-close on DSCR and Bank Statement files, named account
         executives with a 4-business-hour response commitment, and broker-elected
         comp. A division of Cliffco Mortgage Bankers (founded 1989).
@@ -220,7 +220,7 @@ const channelSchema = {
         <h2>The channel at a glance</h2>
         <ul>
           <li><span class="label">Programs</span><span class="value">10 Non-QM</span></li>
-          <li><span class="label">States</span><span class="value">NY · NJ · PA · FL · CT · TX</span></li>
+          <li><span class="label">States</span><span class="value">16 states + D.C.</span></li>
           <li><span class="label">Loan amounts</span><span class="value">$100K – $5M</span></li>
           <li><span class="label">Min FICO (standard)</span><span class="value">620</span></li>
           <li><span class="label">Typical clear-to-close</span><span class="value">15–25 days (DSCR · Bank Statement)</span></li>
