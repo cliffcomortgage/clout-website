@@ -88,46 +88,17 @@ const faqs = [
         </dl>
       </div>
 
-      <!-- Decorative only — the milestones/turn-times it dramatizes are already
-           stated as real text above (hero-proof) and throughout the page. -->
-      <div class="hero-visual" aria-hidden="true">
-        <div class="pipeline">
-          <div class="pipeline-line"></div>
-          <ul class="pipeline-nodes">
-            <li class="pipeline-node pipeline-node-1">
-              <span class="node-ring"></span><span class="node-dot"></span>
-              <span class="node-label">Submit</span>
-            </li>
-            <li class="pipeline-node pipeline-node-2">
-              <span class="node-ring"></span><span class="node-dot"></span>
-              <span class="node-label">Scenario</span>
-            </li>
-            <li class="pipeline-node pipeline-node-3">
-              <span class="node-ring"></span><span class="node-dot"></span>
-              <span class="node-label">Conditions</span>
-            </li>
-            <li class="pipeline-node pipeline-node-4">
-              <span class="node-ring"></span><span class="node-dot"></span>
-              <span class="node-label">CTC</span>
-            </li>
-            <li class="pipeline-node pipeline-node-5">
-              <span class="node-ring"></span><span class="node-dot"></span>
-              <span class="node-check">✓</span>
-              <span class="node-label">Funded</span>
-              <span class="burst-dot burst-dot-1"></span>
-              <span class="burst-dot burst-dot-2"></span>
-              <span class="burst-dot burst-dot-3"></span>
-              <span class="burst-dot burst-dot-4"></span>
-            </li>
-          </ul>
-          <div class="pipeline-card">
-            <span class="card-trail"></span>
-            <span class="card-body">
-              <span class="card-fold"></span>
-              <span class="card-line"></span>
-              <span class="card-line short"></span>
-            </span>
-          </div>
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <img
+            src="/images/hero-photo.webp"
+            srcset="/images/hero-photo.webp 1x, /images/hero-photo@2x.webp 2x"
+            alt="Smiling mortgage professional in an urban setting"
+            width="900"
+            height="1352"
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
       </div>
     </div>
@@ -455,257 +426,24 @@ const faqs = [
   }
 
   /* ══════════════════════════════════════
-     HERO VISUAL — "Pipeline Milestones"
-     A file card travels a horizontal track, lighting up each checkpoint as
-     it passes and ending in a checkmark burst on "Funded" before looping.
-     Pure CSS (no JS/video) — card position and each node's pulse share one
-     animation-duration so they stay phase-locked across every loop.
+     HERO VISUAL — photo
      ══════════════════════════════════════ */
   .hero-visual {
     position: relative;
   }
-  .pipeline {
+  .hero-photo-frame {
     position: relative;
-    height: 168px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 24px 48px -20px color-mix(in srgb, var(--color-brand-deep) 35%, transparent);
   }
-  .pipeline-line {
-    position: absolute;
-    top: 23px;
-    left: 5px;
-    right: 5px;
-    height: 2px;
-    background: var(--color-line);
-    z-index: 1;
-  }
-  .pipeline-nodes {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .pipeline-node {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.7rem;
-    width: 3rem;
-    flex-shrink: 0;
-  }
-  .node-ring {
-    position: absolute;
-    top: 18px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--color-brand-bright);
-    opacity: 0;
-    pointer-events: none;
-  }
-  .node-dot {
-    position: relative;
-    z-index: 2;
-    width: 10px;
-    height: 10px;
-    margin-top: 18px;
-    border-radius: 50%;
-    background: var(--color-paper);
-    border: 2px solid var(--color-line);
-  }
-  .node-label {
-    font-family: var(--font-accent);
-    font-size: 0.625rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--color-mid);
-    white-space: nowrap;
-  }
-  .pipeline-node-5 { position: relative; }
-  .node-check {
-    position: absolute;
-    top: 12px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--color-brand-bright);
-    color: var(--color-paper);
-    font-size: 0.7rem;
-    font-weight: 700;
-    line-height: 20px;
-    text-align: center;
-    opacity: 0;
-    z-index: 3;
-  }
-  .burst-dot {
-    position: absolute;
-    top: 22px;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    margin-left: -2px;
-    border-radius: 50%;
-    background: var(--color-brand-warmth);
-    opacity: 0;
-  }
-
-  .pipeline-card {
-    position: absolute;
-    top: 6px;
-    left: -6%;
-    width: 32px;
-    height: 26px;
-    z-index: 4;
-    opacity: 0;
-    animation: card-travel 7s linear infinite;
-  }
-  .card-trail {
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 3px;
-    background: linear-gradient(to left, color-mix(in srgb, var(--color-brand-bright) 65%, transparent), transparent);
-    filter: blur(1px);
-  }
-  .card-body {
-    position: relative;
+  .hero-photo-frame img {
     display: block;
     width: 100%;
     height: 100%;
-    background: var(--color-paper);
-    border: 1.5px solid var(--color-brand-deep);
-    border-radius: 5px;
-    box-shadow: 0 4px 10px -3px color-mix(in srgb, var(--color-brand-deep) 40%, transparent);
-    animation: card-bob 1.1s ease-in-out infinite;
-  }
-  .card-fold {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 8px;
-    height: 8px;
-    background: var(--color-surface);
-    border-left: 1.5px solid var(--color-brand-deep);
-    border-bottom: 1.5px solid var(--color-brand-deep);
-    border-bottom-left-radius: 3px;
-  }
-  .card-line {
-    position: absolute;
-    left: 5px;
-    right: 9px;
-    top: 10px;
-    height: 2px;
-    border-radius: 1px;
-    background: var(--color-line);
-  }
-  .card-line.short {
-    top: 16px;
-    right: 15px;
-  }
-
-  @keyframes card-bob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-  }
-
-  /* Card position/opacity as % of the 7s loop — arrives at each of the 5
-     nodes (0%, 25%, 50%, 75%, 100% across the track) at 6%, 28%, 50%, 72%,
-     90% of the timeline, then holds, fades, and resets before looping. */
-  @keyframes card-travel {
-    0%   { left: -6%; opacity: 0; }
-    4%   { opacity: 1; }
-    6%   { left: 0%; }
-    28%  { left: 25%; }
-    50%  { left: 50%; }
-    72%  { left: 75%; }
-    90%  { left: 94%; opacity: 1; }
-    97%  { left: 94%; opacity: 0; }
-    100% { left: -6%; opacity: 0; }
-  }
-
-  /* Each node's pulse fires once per loop, timed to the card's arrival
-     above — the node holds its "idle" look (base CSS) until its delay
-     elapses, pulses briefly, then stays "completed" for the rest of the
-     loop until the next lap resets it. */
-  .pipeline-node-1 .node-dot, .pipeline-node-1 .node-ring { animation-delay: 0.28s; }
-  .pipeline-node-2 .node-dot, .pipeline-node-2 .node-ring { animation-delay: 1.96s; }
-  .pipeline-node-3 .node-dot, .pipeline-node-3 .node-ring { animation-delay: 3.5s; }
-  .pipeline-node-4 .node-dot, .pipeline-node-4 .node-ring { animation-delay: 5.04s; }
-  .pipeline-node-5 .node-dot, .pipeline-node-5 .node-ring,
-  .pipeline-node-5 .node-check, .pipeline-node-5 .burst-dot { animation-delay: 6.3s; }
-
-  .node-dot {
-    animation: node-fill 7s linear infinite;
-  }
-  .node-ring {
-    animation: node-ring-ping 7s linear infinite;
-  }
-  @keyframes node-fill {
-    0%   { transform: scale(1); background: var(--color-paper); border-color: var(--color-line); }
-    3%   { transform: scale(1.4); background: var(--color-brand-bright); border-color: var(--color-brand-bright); }
-    12%  { transform: scale(1); background: var(--color-brand-bright); border-color: var(--color-brand-bright); }
-    100% { background: var(--color-brand-bright); border-color: var(--color-brand-bright); }
-  }
-  @keyframes node-ring-ping {
-    0%   { transform: scale(0.6); opacity: 0; }
-    2%   { transform: scale(0.6); opacity: 0.5; }
-    16%  { transform: scale(2); opacity: 0; }
-    100% { opacity: 0; }
-  }
-  .pipeline-node .node-label { transition: none; }
-  .pipeline-node-1 .node-label, .pipeline-node-2 .node-label,
-  .pipeline-node-3 .node-label, .pipeline-node-4 .node-label,
-  .pipeline-node-5 .node-label {
-    animation: node-label-fill 7s linear infinite;
-  }
-  .pipeline-node-1 .node-label { animation-delay: 0.28s; }
-  .pipeline-node-2 .node-label { animation-delay: 1.96s; }
-  .pipeline-node-3 .node-label { animation-delay: 3.5s; }
-  .pipeline-node-4 .node-label { animation-delay: 5.04s; }
-  .pipeline-node-5 .node-label { animation-delay: 6.3s; }
-  @keyframes node-label-fill {
-    0%   { color: var(--color-mid); }
-    12%  { color: var(--color-brand-deep); }
-    100% { color: var(--color-brand-deep); }
-  }
-
-  .node-check {
-    animation: check-pop 7s linear infinite;
-  }
-  @keyframes check-pop {
-    0%   { opacity: 0; transform: scale(0.4) rotate(-10deg); }
-    3%   { opacity: 1; transform: scale(1.2) rotate(0deg); }
-    8%   { transform: scale(1) rotate(0deg); }
-    92%  { opacity: 1; }
-    97%  { opacity: 0; }
-    100% { opacity: 0; }
-  }
-
-  .burst-dot { animation: burst-fly 7s linear infinite; }
-  .burst-dot-1 { --a: -55deg; }
-  .burst-dot-2 { --a: -18deg; }
-  .burst-dot-3 { --a: 18deg; }
-  .burst-dot-4 { --a: 55deg; }
-  @keyframes burst-fly {
-    0%   { opacity: 0; transform: rotate(var(--a)) translateX(0) scale(1); }
-    3%   { opacity: 1; }
-    14%  { opacity: 0; transform: rotate(var(--a)) translateX(20px) scale(0.4); }
-    100% { opacity: 0; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pipeline-card, .card-body, .node-dot, .node-ring, .node-label,
-    .node-check, .burst-dot {
-      animation: none !important;
-    }
-    .pipeline-card { left: 94%; opacity: 1; }
-    .node-dot { background: var(--color-brand-bright); border-color: var(--color-brand-bright); }
-    .node-label { color: var(--color-brand-deep); }
-    .node-check { opacity: 1; transform: none; }
+    object-fit: cover;
+    object-position: center top;
   }
 
   /* ══════════════════════════════════════
