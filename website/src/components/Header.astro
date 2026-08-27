@@ -144,7 +144,13 @@ const featuredProducts = [...tier1Products, ...tier2Products];
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    min-width: 560px;
+    /* A definite width (not min-width) so the grid distributes it and text
+       wraps predictably. An auto-width absolutely-positioned panel sizes
+       toward each grid column's max-content (text refuses to wrap) —
+       that's what was pushing panels past the viewport edge and causing
+       page-wide horizontal scroll. */
+    width: 640px;
+    max-width: calc(100vw - 2rem);
     background: var(--color-paper);
     border: 1px solid var(--color-line);
     border-radius: var(--radius-xl);
@@ -174,10 +180,19 @@ const featuredProducts = [...tier1Products, ...tier2Products];
     display: flex;
     flex-direction: column;
     gap: 3px;
+    min-width: 0;
     padding: 0.625rem 0.75rem;
     border-radius: var(--radius-md);
     text-decoration: none;
     transition: background 100ms ease;
+  }
+  /* .menu-item is an <a> nested inside .primary-nav, so "white-space: nowrap"
+     from ".primary-nav a" (higher specificity — it has an extra element
+     selector) wins over a plain ".menu-item" override. Without un-setting it
+     here, dropdown descriptions refuse to wrap and spill across neighboring
+     grid columns instead. */
+  .menu-panel .menu-item {
+    white-space: normal;
   }
   .menu-item:hover { background: var(--color-surface); }
 
@@ -221,7 +236,7 @@ const featuredProducts = [...tier1Products, ...tier2Products];
   .menu-panel-portal {
     left: auto;
     right: 0;
-    min-width: 480px;
+    width: 480px;
   }
   .menu-grid-portal { grid-template-columns: 1fr; }
 
