@@ -25,7 +25,7 @@ const topProducts = state.topProducts
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 const article = articleSchema({
-  headline: `Non-QM Lending in ${state.name} — Clout`,
+  headline: `Non-QM Lending in ${state.name}: Clout`,
   description: `Clout offers Non-QM mortgage programs in ${state.name} for brokers and real estate investors. Local market coverage of ${state.topMetros.join(', ')}.`,
   url: pageUrl,
   datePublished: dateModified,
@@ -60,8 +60,8 @@ const article = articleSchema({
 
       <p class="answer-first">
         Clout serves {state.name} mortgage brokers and real estate investors across
-        {' '}{state.topMetros.join(', ')}. We offer the full Clout Non-QM program suite —
-        DSCR, bank statement, 1099, foreign national, and asset qualifier — with local
+        {' '}{state.topMetros.join(', ')}. We offer the full Clout Non-QM program suite:
+        DSCR, bank statement, 1099, foreign national, and asset qualifier, with local
         attention to {state.name}'s licensing, closing process, and market dynamics.
       </p>
 
@@ -74,7 +74,7 @@ const article = articleSchema({
         <p class="eyebrow">In development</p>
         <h2>Full {state.name} market guide coming soon.</h2>
         <p>
-          We're building the complete {state.name} state hub — local competitor map,
+          We're building the complete {state.name} state hub: local competitor map,
           metro deep dives, REIA partnerships, local press features, market commentary,
           and state-specific compliance disclosures. In the meantime, the program
           shortlist below shows what closes most often in {state.name}.

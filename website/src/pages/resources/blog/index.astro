@@ -29,7 +29,7 @@ const blogSchema = {
   '@id': `${pageUrl}#blog`,
   name: 'Clout Non-QM Blog',
   description:
-    'Plain-language guides for mortgage brokers placing wholesale Non-QM files and real estate investors qualifying on cash flow, bank statements, 1099 income, or assets — covering DSCR, Bank Statement, 1099 Only, P&L Only, and Foreign National programs.',
+    'Plain-language guides for mortgage brokers placing wholesale Non-QM files and real estate investors qualifying on cash flow, bank statements, 1099 income, or assets. Covers DSCR, Bank Statement, 1099 Only, P&L Only, and Foreign National programs.',
   url: pageUrl,
   publisher: { '@id': `${SITE.url}#organization` },
   inLanguage: 'en-US',
@@ -49,8 +49,8 @@ const blogSchema = {
 ---
 
 <Layout
-  title="Clout Non-QM Blog — Guides for Brokers and Real Estate Investors"
-  description={`Plain-language Non-QM guides from Clout (NMLS #${SITE.nmlsId}) — DSCR underwriting, Bank Statement income, 1099 Only mortgages, Foreign National DSCR, and field guides for mortgage brokers placing wholesale Non-QM files. ${BLOG_POSTS.length} articles across ${BLOG_CATEGORIES.length} categories.`}
+  title="Clout Non-QM Blog: Guides for Brokers and Real Estate Investors"
+  description={`Plain-language Non-QM guides from Clout (NMLS #${SITE.nmlsId}) covering DSCR underwriting, Bank Statement income, 1099 Only mortgages, Foreign National DSCR, and field guides for mortgage brokers placing wholesale Non-QM files. ${BLOG_POSTS.length} articles across ${BLOG_CATEGORIES.length} categories.`}
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(blogSchema)]}
@@ -62,7 +62,7 @@ const blogSchema = {
       <p class="answer-first lead">
         Whether you're a mortgage broker placing wholesale Non-QM files, a real estate
         investor qualifying on cash flow, or a self-employed borrower whose tax returns
-        understate your income — these {BLOG_POSTS.length} articles answer the questions
+        understate your income, these {BLOG_POSTS.length} articles answer the questions
         we hear most often at the Clout scenario desk.
       </p>
       <p class="reviewed-by">
@@ -120,7 +120,7 @@ const blogSchema = {
       </div>
 
       <p id="no-results" class="no-results" hidden>
-        No articles in this category yet — try "All" or call <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a> for a scenario.
+        No articles in this category yet. Try "All" or call <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a> for a scenario.
       </p>
     </div>
   </section>

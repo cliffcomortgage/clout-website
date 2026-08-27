@@ -43,12 +43,12 @@ const portalFeatures = [
   {
     title: 'Guidelines library',
     detail:
-      'Underwriting matrices for DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier — versioned and dated.',
+      'Underwriting matrices for DSCR, Bank Statement, 1099, Foreign National, and Asset Qualifier, versioned and dated.',
   },
   {
     title: 'Direct AE access',
     detail:
-      'Named account executive by region. Cell phone, email, and a published response-time commitment — not a 1-800 queue.',
+      'Named account executive by region. Cell phone, email, and a published response-time commitment, not a 1-800 queue.',
   },
 ];
 
@@ -72,7 +72,7 @@ const aeDesks = [
     coverage: `${STATES.length} states + D.C.`,
     phone: SITE.phoneDisplay,
     email: SITE.email,
-    note: 'Long Island HQ, headquarters for the wholesale channel. Every partner gets a named account executive on assignment — call or email to be routed to yours.',
+    note: 'Long Island HQ, headquarters for the wholesale channel. Every partner gets a named account executive on assignment. Call or email to be routed to yours.',
   },
 ];
 
@@ -86,7 +86,7 @@ const onboardingSteps = [
   {
     n: '02',
     title: 'Submit broker package',
-    body: 'W-9, broker agreement, E&O certificate, NMLS license, AML policy, resumes for principals. Standard wholesale package — no exotic asks.',
+    body: 'W-9, broker agreement, E&O certificate, NMLS license, AML policy, resumes for principals. Standard wholesale package, no exotic asks.',
   },
   {
     n: '03',
@@ -147,7 +147,7 @@ const faqs = [
   {
     question: 'How do I become a Clout wholesale broker partner?',
     answer:
-      'Email PowerUp@CLOUTwmb.com or call 844-477-3111 to start. You will submit a standard wholesale broker package — W-9, broker agreement, E&O certificate, NMLS license, AML policy, and principal resumes — and complete a 30-minute onboarding call with your named account executive. Most brokers are approved and submitting their first file within 5–7 business days.',
+      'Email PowerUp@CLOUTwmb.com or call 844-477-3111 to start. You will submit a standard wholesale broker package (W-9, broker agreement, E&O certificate, NMLS license, AML policy, and principal resumes) and complete a 30-minute onboarding call with your named account executive. Most brokers are approved and submitting their first file within 5–7 business days.',
   },
   {
     question: 'What documents do I need to register as a Clout TPO partner?',
@@ -167,7 +167,7 @@ const faqs = [
   {
     question: 'How does broker compensation work at Clout?',
     answer:
-      'Clout pays broker compensation on the broker-elected plan filed with the company — lender-paid (LPC) or borrower-paid (BPC), at the rate you have on file. Comp is disclosed on the lock confirmation, paid at funding, and reconciled monthly. Comp adjustments require a written plan change and are not negotiated file-by-file.',
+      'Clout pays broker compensation on the broker-elected plan filed with the company, either lender-paid (LPC) or borrower-paid (BPC), at the rate you have on file. Comp is disclosed on the lock confirmation, paid at funding, and reconciled monthly. Comp adjustments require a written plan change and are not negotiated file-by-file.',
   },
   {
     question: 'What states does Clout TPO Connect cover?',
@@ -182,7 +182,7 @@ const faqs = [
   {
     question: 'What is the minimum FICO to submit a Non-QM file through Clout?',
     answer:
-      'Most Clout Non-QM programs require a minimum 620 FICO. Some programs accept lower scores with compensating factors — larger down payment, lower LTV, reserves, or stronger DSCR. Final eligibility is determined by underwriting and the specific program matrix in effect on the lock date.',
+      'Most Clout Non-QM programs require a minimum 620 FICO. Some programs accept lower scores with compensating factors: a larger down payment, lower LTV, reserves, or stronger DSCR. Final eligibility is determined by underwriting and the specific program matrix in effect on the lock date.',
   },
   {
     question: 'Who do I call if a file is stuck in underwriting?',
@@ -224,7 +224,7 @@ const serviceSchema = {
 ---
 
 <Layout
-  title="Clout TPO Connect — Wholesale Non-QM Partner Portal for Mortgage Brokers"
+  title="Clout TPO Connect: Wholesale Non-QM Partner Portal for Mortgage Brokers"
   description="Clout TPO Connect is the wholesale Non-QM partner portal for licensed mortgage brokers. Sign in for live pricing, eDoc submission, pipeline tracking, and direct AE access. 10 Non-QM programs across 16 states + D.C. NMLS #65328."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
@@ -233,7 +233,7 @@ const serviceSchema = {
   <section class="hero">
     <div class="container">
       <p class="eyebrow">Wholesale partner portal · NMLS #{SITE.nmlsId}</p>
-      <h1>Clout TPO Connect — the wholesale Non-QM portal for mortgage brokers.</h1>
+      <h1>Clout TPO Connect: the wholesale Non-QM portal for mortgage brokers.</h1>
       <p class="answer-first lead">
         Clout TPO Connect is the wholesale partner portal mortgage brokers use to place
         Non-QM files with Clout. Sign in for live wholesale pricing, eDoc submission,
@@ -389,12 +389,12 @@ const serviceSchema = {
             2 PM ET). Send the following so we can answer in one pass:
           </p>
           <ul class="checklist">
-            <li>Borrower profile — entity vs personal, citizenship, occupancy</li>
-            <li>Property — address or zip, type, purchase or refi, value</li>
-            <li>Loan request — amount, LTV, term, purpose</li>
-            <li>Income or qualifying basis — DSCR, bank statements, 1099, assets</li>
+            <li>Borrower profile: entity vs personal, citizenship, occupancy</li>
+            <li>Property: address or zip, type, purchase or refi, value</li>
+            <li>Loan request: amount, LTV, term, purpose</li>
+            <li>Income or qualifying basis: DSCR, bank statements, 1099, assets</li>
             <li>FICO band and any credit-event history (BK, FC, SS) with dates</li>
-            <li>The specific question — "will you approve," "best program," "max LTV"</li>
+            <li>The specific question: "will you approve," "best program," "max LTV"</li>
           </ul>
         </div>
         <aside class="scenario-desk-card">
@@ -472,7 +472,7 @@ const serviceSchema = {
       <div class="apply-grid">
         <div class="apply-copy">
           <p>
-            Email the items below to <a href={`mailto:${SITE.email}?subject=New%20Broker%20Partner%20Application`}>{SITE.email}</a> — or
+            Email the items below to <a href={`mailto:${SITE.email}?subject=New%20Broker%20Partner%20Application`}>{SITE.email}</a>, or
             call <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a> and an AE will
             walk you through it. We respond to every application within one business day.
           </p>

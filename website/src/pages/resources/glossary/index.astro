@@ -37,7 +37,7 @@ const terms: Term[] = [
     slug: '1099-only-mortgage',
     term: '1099 Only Mortgage',
     definition:
-      `A Non-QM program for independent contractors and gig workers that qualifies on gross 1099 income from one or two years of 1099 forms — not on net Schedule C profit (which is typically much lower after deductions). Common for high-income contractors who write off heavily. Clout offers 1099 Only across all ${STATES.length} licensed states and D.C.`,
+      `A Non-QM program for independent contractors and gig workers that qualifies on gross 1099 income from one or two years of 1099 forms, rather than net Schedule C profit (which is typically much lower after deductions). Common for high-income contractors who write off heavily. Clout offers 1099 Only across all ${STATES.length} licensed states and D.C.`,
     seeAlso: [{ label: '1099 Only program', href: '/loan-options/1099-only/' }],
   },
   {
@@ -65,13 +65,13 @@ const terms: Term[] = [
     slug: 'atr',
     term: 'ATR (Ability-to-Repay rule)',
     definition:
-      'The federal regulation (CFPB Reg Z, 12 CFR 1026.43) requiring lenders to make a reasonable, good-faith determination that a borrower can repay a residential mortgage. Non-QM loans satisfy ATR through alternative documentation (bank statements, 1099s, DSCR, assets) — they do not meet the Qualified Mortgage safe-harbor but still comply with ATR.',
+      'The federal regulation (CFPB Reg Z, 12 CFR 1026.43) requiring lenders to make a reasonable, good-faith determination that a borrower can repay a residential mortgage. Non-QM loans satisfy ATR through alternative documentation (bank statements, 1099s, DSCR, assets). They do not meet the Qualified Mortgage safe-harbor but still comply with ATR.',
   },
   {
     slug: 'aus',
     term: 'AUS (Automated Underwriting System)',
     definition:
-      'Software that runs an automated credit decision on a mortgage file. Common engines include Fannie Mae\'s Desktop Underwriter (DU) and Freddie Mac\'s Loan Product Advisor (LPA). All Clout Non-QM programs are manually underwritten and do not run through AUS — part of why Non-QM accommodates non-standard income.',
+      'Software that runs an automated credit decision on a mortgage file. Common engines include Fannie Mae\'s Desktop Underwriter (DU) and Freddie Mac\'s Loan Product Advisor (LPA). All Clout Non-QM programs are manually underwritten and do not run through AUS, which is part of why Non-QM accommodates non-standard income.',
   },
   {
     slug: 'bank-statement-loan',
@@ -91,7 +91,7 @@ const terms: Term[] = [
     slug: 'brrrr',
     term: 'BRRRR',
     definition:
-      'Buy, Rehab, Rent, Refinance, Repeat — a real-estate-investor strategy of acquiring distressed property with cash or short-term financing, renovating, leasing, then refinancing with a long-term loan (often DSCR) to extract equity for the next purchase. Clout\'s DSCR program is commonly used for the refi leg of the BRRRR cycle.',
+      'Buy, Rehab, Rent, Refinance, Repeat: a real-estate-investor strategy of acquiring distressed property with cash or short-term financing, renovating, leasing, then refinancing with a long-term loan (often DSCR) to extract equity for the next purchase. Clout\'s DSCR program is commonly used for the refi leg of the BRRRR cycle.',
     seeAlso: [{ label: 'DSCR program', href: '/loan-options/dscr/' }],
   },
   {
@@ -125,7 +125,7 @@ const terms: Term[] = [
     slug: 'compensating-factors',
     term: 'Compensating Factors',
     definition:
-      'Underwriting strengths that offset weaknesses in a file — larger down payment, stronger reserves, higher FICO, lower DTI, or longer self-employment history. Non-QM programs lean heavily on compensating factors because they accommodate borrowers who fall outside conforming guidelines.',
+      'Underwriting strengths that offset weaknesses in a file: a larger down payment, stronger reserves, higher FICO, lower DTI, or longer self-employment history. Non-QM programs lean heavily on compensating factors because they accommodate borrowers who fall outside conforming guidelines.',
   },
   {
     slug: 'conditions',
@@ -137,7 +137,7 @@ const terms: Term[] = [
     slug: 'conforming-loan',
     term: 'Conforming Loan',
     definition:
-      'A mortgage that meets Fannie Mae or Freddie Mac purchase guidelines, including loan-amount limits set annually by FHFA. Conforming loans are typically Qualified Mortgages. Non-QM loans, including all Clout programs, fall outside conforming criteria — usually by income documentation, property type, or loan structure.',
+      'A mortgage that meets Fannie Mae or Freddie Mac purchase guidelines, including loan-amount limits set annually by FHFA. Conforming loans are typically Qualified Mortgages. Non-QM loans, including all Clout programs, fall outside conforming criteria, usually because of income documentation, property type, or loan structure.',
   },
   {
     slug: 'debt-yield',
@@ -156,14 +156,14 @@ const terms: Term[] = [
     slug: 'dscr',
     term: 'DSCR (Debt Service Coverage Ratio)',
     definition:
-      'The ratio of a rental property\'s net operating income to its annual debt service (PITIA). Calculated as NOI ÷ debt service. A 1.0 DSCR means rent exactly covers the mortgage payment. Clout DSCR loans qualify on property cash flow rather than borrower income — minimum DSCR varies by program and LTV.',
+      'The ratio of a rental property\'s net operating income to its annual debt service (PITIA). Calculated as NOI ÷ debt service. A 1.0 DSCR means rent exactly covers the mortgage payment. Clout DSCR loans qualify on property cash flow rather than borrower income. Minimum DSCR varies by program and LTV.',
     seeAlso: [{ label: 'NOI', href: '#noi' }, { label: 'PITIA', href: '#pitia' }, { label: 'DSCR program', href: '/loan-options/dscr/' }],
   },
   {
     slug: 'dscr-loan',
     term: 'DSCR Loan',
     definition:
-      'A Non-QM rental-property loan that qualifies on the property\'s cash flow (DSCR ratio) instead of the investor\'s personal income, W-2s, or tax returns. The investor\'s FICO and reserves still matter, but DTI is not calculated. Clout\'s flagship program — see the DSCR program page for current parameters.',
+      'A Non-QM rental-property loan that qualifies on the property\'s cash flow (DSCR ratio) instead of the investor\'s personal income, W-2s, or tax returns. The investor\'s FICO and reserves still matter, but DTI is not calculated. Clout\'s flagship program. See the DSCR program page for current parameters.',
     seeAlso: [{ label: 'DSCR program', href: '/loan-options/dscr/' }],
   },
   {
@@ -190,7 +190,7 @@ const terms: Term[] = [
     slug: 'equal-housing-lender',
     term: 'Equal Housing Lender',
     definition:
-      `A lender that has pledged compliance with the Fair Housing Act and ECOA — not to discriminate in extending housing-related credit. The Equal Housing Lender designation is required on mortgage advertising. Clout is an Equal Housing Lender across all ${STATES.length} licensed states and D.C.`,
+      `A lender that has pledged compliance with the Fair Housing Act and ECOA, agreeing not to discriminate in extending housing-related credit. The Equal Housing Lender designation is required on mortgage advertising. Clout is an Equal Housing Lender across all ${STATES.length} licensed states and D.C.`,
   },
   {
     slug: 'fico',
@@ -202,14 +202,14 @@ const terms: Term[] = [
     slug: 'foreign-national-mortgage',
     term: 'Foreign National Mortgage',
     definition:
-      'A Non-QM program for non-US citizens (no US Social Security Number) investing in US real estate. Qualifies on international credit equivalent, foreign income documentation, and asset reserves. Clout offers Foreign National DSCR loans — common use case: Canadian, UK, or Latin American investors buying US rental property.',
+      'A Non-QM program for non-US citizens (no US Social Security Number) investing in US real estate. Qualifies on international credit equivalent, foreign income documentation, and asset reserves. Clout offers Foreign National DSCR loans. A common use case is Canadian, UK, or Latin American investors buying US rental property.',
     seeAlso: [{ label: 'Foreign National program', href: '/loan-options/foreign-national/' }],
   },
   {
     slug: 'full-doc-non-qm',
     term: 'Full Doc Non-QM',
     definition:
-      'A Non-QM program for borrowers with full income documentation (W-2s, tax returns, paystubs) whose file falls outside conforming or QM criteria for non-income reasons — large loan amount, property type, debt structure, or credit event. Lets full-doc borrowers access Non-QM flexibility.',
+      'A Non-QM program for borrowers with full income documentation (W-2s, tax returns, paystubs) whose file falls outside conforming or QM criteria for non-income reasons, such as large loan amount, property type, debt structure, or credit event. Lets full-doc borrowers access Non-QM flexibility.',
     seeAlso: [{ label: 'Full Doc program', href: '/loan-options/full-doc/' }],
   },
   {
@@ -230,7 +230,7 @@ const terms: Term[] = [
     slug: 'lite-doc-loan',
     term: 'Lite Doc Loan',
     definition:
-      'A Non-QM program for W-2 employees with limited documentation — typically 1 year of W-2 plus a Verification of Employment and a year-to-date paystub, in lieu of two years of returns. Used by borrowers who recently restarted employment after self-employment, school, or a career change.',
+      'A Non-QM program for W-2 employees with limited documentation: typically 1 year of W-2 plus a Verification of Employment and a year-to-date paystub, in lieu of two years of returns. Used by borrowers who recently restarted employment after self-employment, school, or a career change.',
     seeAlso: [{ label: 'Lite Doc program', href: '/loan-options/lite-doc/' }],
   },
   {
@@ -257,21 +257,21 @@ const terms: Term[] = [
     slug: 'noi',
     term: 'NOI (Net Operating Income)',
     definition:
-      'A rental property\'s annual income from operations after operating expenses but before debt service and taxes. Calculated as gross rental income minus vacancy, operating expenses (insurance, maintenance, management, HOA) — but excluding mortgage interest and depreciation. The numerator in DSCR.',
+      'A rental property\'s annual income from operations after operating expenses but before debt service and taxes. Calculated as gross rental income minus vacancy and operating expenses (insurance, maintenance, management, HOA), excluding mortgage interest and depreciation. The numerator in DSCR.',
     seeAlso: [{ label: 'DSCR', href: '#dscr' }, { label: 'Cap rate', href: '#cap-rate' }],
   },
   {
     slug: 'non-agency-second-home',
     term: 'Non-Agency Second Home',
     definition:
-      'A Non-QM program for second-home or vacation-property purchases that fall outside Fannie Mae\'s second-home guidelines — often by property type (short-term-rental zoning), occupancy pattern, or loan size. Clout originates Non-Agency Second Home loans for Colorado, Long Island, and Texas vacation markets.',
+      'A Non-QM program for second-home or vacation-property purchases that fall outside Fannie Mae\'s second-home guidelines, often because of property type (short-term-rental zoning), occupancy pattern, or loan size. Clout originates Non-Agency Second Home loans for Colorado, Long Island, and Texas vacation markets.',
     seeAlso: [{ label: 'Non-Agency Second Home program', href: '/loan-options/non-agency-second-home/' }],
   },
   {
     slug: 'non-qm',
     term: 'Non-QM (Non-Qualified Mortgage)',
     definition:
-      'A residential mortgage that does not meet the CFPB Qualified Mortgage (QM) safe-harbor criteria — typically because the underwriting uses alternative income documentation (bank statements, 1099s, DSCR, assets) instead of standard W-2 or tax-return verification. Non-QM still satisfies the ATR rule. All ten Clout programs are Non-QM.',
+      'A residential mortgage that does not meet the CFPB Qualified Mortgage (QM) safe-harbor criteria, typically because the underwriting uses alternative income documentation (bank statements, 1099s, DSCR, assets) instead of standard W-2 or tax-return verification. Non-QM still satisfies the ATR rule. All ten Clout programs are Non-QM.',
     seeAlso: [{ label: 'QM', href: '#qm' }, { label: 'ATR', href: '#atr' }, { label: 'All programs', href: '/loan-options/' }],
   },
   {
@@ -285,7 +285,7 @@ const terms: Term[] = [
     slug: 'pitia',
     term: 'PITIA',
     definition:
-      'Principal, Interest, Taxes, Insurance, and Association dues — the five components of a borrower\'s total monthly housing payment. Used in DTI calculation and as the denominator in DSCR (annualized). Sometimes written PITI when there is no HOA.',
+      'Principal, Interest, Taxes, Insurance, and Association dues: the five components of a borrower\'s total monthly housing payment. Used in DTI calculation and as the denominator in DSCR (annualized). Sometimes written PITI when there is no HOA.',
     seeAlso: [{ label: 'DTI', href: '#dti' }, { label: 'DSCR', href: '#dscr' }],
   },
   {
@@ -298,14 +298,14 @@ const terms: Term[] = [
     slug: 'pre-qualification',
     term: 'Pre-Qualification',
     definition:
-      'An informal lender review of a borrower\'s stated income, assets, and credit profile to estimate loan size and eligibility — typically without document verification or underwriter sign-off. Distinct from a pre-approval, which involves credit pull and underwriter review. Clout offers pre-qualification through the contact page.',
+      'An informal lender review of a borrower\'s stated income, assets, and credit profile to estimate loan size and eligibility, typically without document verification or underwriter sign-off. Distinct from a pre-approval, which involves credit pull and underwriter review. Clout offers pre-qualification through the contact page.',
     seeAlso: [{ label: 'Contact Clout', href: '/contact/' }],
   },
   {
     slug: 'qm',
     term: 'QM (Qualified Mortgage)',
     definition:
-      'A mortgage meeting the CFPB safe-harbor criteria under the ATR rule — verified income, capped points and fees, DTI under defined limits, and no risky features (no negative amortization, no interest-only, no balloon, no 40-year term). QM loans get a presumption of ATR compliance. Non-QM loans satisfy ATR but do not qualify for the QM safe harbor.',
+      'A mortgage meeting the CFPB safe-harbor criteria under the ATR rule: verified income, capped points and fees, DTI under defined limits, and no risky features (no negative amortization, no interest-only, no balloon, no 40-year term). QM loans get a presumption of ATR compliance. Non-QM loans satisfy ATR but do not qualify for the QM safe harbor.',
     seeAlso: [{ label: 'Non-QM', href: '#non-qm' }, { label: 'ATR', href: '#atr' }],
   },
   {
@@ -326,14 +326,14 @@ const terms: Term[] = [
     slug: 'reg-b',
     term: 'Reg B',
     definition:
-      'The CFPB regulation implementing ECOA — prohibits credit discrimination and prescribes notice and recordkeeping requirements (including the Adverse Action Notice). Originators must follow Reg B in every credit decision.',
+      'The CFPB regulation implementing ECOA. It prohibits credit discrimination and prescribes notice and recordkeeping requirements (including the Adverse Action Notice). Originators must follow Reg B in every credit decision.',
     seeAlso: [{ label: 'ECOA', href: '#ecoa' }],
   },
   {
     slug: 'reg-z',
     term: 'Reg Z',
     definition:
-      'The CFPB regulation implementing the Truth in Lending Act (TILA) — governs disclosure of mortgage terms, ATR / QM, TRID, advertising rules, and consumer right of rescission on certain refinances. Reg Z is the primary regulatory substrate for residential mortgage origination.',
+      'The CFPB regulation implementing the Truth in Lending Act (TILA). It governs disclosure of mortgage terms, ATR / QM, TRID, advertising rules, and consumer right of rescission on certain refinances. Reg Z is the primary regulatory substrate for residential mortgage origination.',
     seeAlso: [{ label: 'ATR', href: '#atr' }, { label: 'TRID', href: '#trid' }],
   },
   {
@@ -353,7 +353,7 @@ const terms: Term[] = [
     slug: 'scenario-desk',
     term: 'Scenario Desk',
     definition:
-      'A wholesale-lender service that returns a written eligibility opinion on a hypothetical loan scenario before a full file is submitted — saving brokers time on borderline deals. Clout\'s scenario desk returns same-business-day responses on clean scenarios received before 2 PM ET.',
+      'A wholesale-lender service that returns a written eligibility opinion on a hypothetical loan scenario before a full file is submitted, saving brokers time on borderline deals. Clout\'s scenario desk returns same-business-day responses on clean scenarios received before 2 PM ET.',
     seeAlso: [{ label: 'Submit a scenario', href: '/tpo-connect/' }],
   },
   {
@@ -373,20 +373,20 @@ const terms: Term[] = [
     slug: 'title-insurance',
     term: 'Title Insurance',
     definition:
-      'A one-time-premium insurance policy issued at closing that protects against loss from defects in title, undisclosed liens, or competing claims. Two policies are typically issued — lender\'s title (required by every mortgage lender) and owner\'s title (optional, protects the buyer).',
+      'A one-time-premium insurance policy issued at closing that protects against loss from defects in title, undisclosed liens, or competing claims. Two policies are typically issued: lender\'s title (required by every mortgage lender) and owner\'s title (optional, protects the buyer).',
   },
   {
     slug: 'tpo',
     term: 'TPO (Third Party Origination)',
     definition:
-      'The wholesale-mortgage channel where a third party — a licensed mortgage broker — originates a loan on behalf of a borrower and submits it to a wholesale lender for underwriting and funding. Distinct from retail origination, where the lender\'s own loan officer originates. Clout operates a TPO channel for Non-QM.',
+      'The wholesale-mortgage channel where a third party (a licensed mortgage broker) originates a loan on behalf of a borrower and submits it to a wholesale lender for underwriting and funding. Distinct from retail origination, where the lender\'s own loan officer originates. Clout operates a TPO channel for Non-QM.',
     seeAlso: [{ label: 'TPO Connect', href: '#tpo-connect' }, { label: 'Wholesale channel', href: '#wholesale-channel' }],
   },
   {
     slug: 'tpo-connect',
     term: 'TPO Connect',
     definition:
-      'Clout\'s wholesale partner portal. Brokers use TPO Connect to register, price, submit, and track Non-QM files — see the portal hub page for portal features, onboarding steps, and turn-times. Powered by ICE Mortgage Technology\'s Encompass platform.',
+      'Clout\'s wholesale partner portal. Brokers use TPO Connect to register, price, submit, and track Non-QM files. See the portal hub page for portal features, onboarding steps, and turn-times. Powered by ICE Mortgage Technology\'s Encompass platform.',
     seeAlso: [{ label: 'TPO Connect hub', href: '/tpo-connect/' }],
   },
   {
@@ -469,7 +469,7 @@ const glossarySchema = {
   '@id': `${pageUrl}#glossary`,
   name: 'Clout Non-QM Wholesale Mortgage Glossary',
   description:
-    'Glossary of terms used in Non-QM wholesale mortgage lending — covering program names (DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier), wholesale-channel terms (TPO, AE, rate sheet, scenario desk), underwriting concepts (ATR, QM, FICO, LTV, DTI), real-estate-investor metrics (NOI, cap rate, BRRRR), and regulatory frameworks (CFPB, ECOA, Reg Z, TRID, RESPA, NMLS).',
+    'Glossary of terms used in Non-QM wholesale mortgage lending, covering program names (DSCR, Bank Statement, 1099, Foreign National, Asset Qualifier), wholesale-channel terms (TPO, AE, rate sheet, scenario desk), underwriting concepts (ATR, QM, FICO, LTV, DTI), real-estate-investor metrics (NOI, cap rate, BRRRR), and regulatory frameworks (CFPB, ECOA, Reg Z, TRID, RESPA, NMLS).',
   url: pageUrl,
   publisher: { '@id': `${SITE.url}#organization` },
   hasDefinedTerm: terms.map((t) => ({
@@ -485,8 +485,8 @@ const glossarySchema = {
 ---
 
 <Layout
-  title="Non-QM Wholesale Mortgage Glossary — Clout"
-  description={`A ${terms.length}-term glossary of Non-QM wholesale mortgage terminology — DSCR, ATR/QM, TPO, LTV, NOI, TRID, RESPA, and the program names used across Clout's 10 Non-QM products. Plain-language definitions for brokers and real estate investors.`}
+  title="Non-QM Wholesale Mortgage Glossary | Clout"
+  description={`A ${terms.length}-term glossary of Non-QM wholesale mortgage terminology, including DSCR, ATR/QM, TPO, LTV, NOI, TRID, RESPA, and the program names used across Clout's 10 Non-QM products. Plain-language definitions for brokers and real estate investors.`}
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(glossarySchema)]}
@@ -497,7 +497,7 @@ const glossarySchema = {
       <h1>Non-QM wholesale mortgage glossary.</h1>
       <p class="answer-first lead">
         Plain-language definitions for the {terms.length} terms that come up most often
-        in Clout files — Non-QM program names, wholesale-channel mechanics, underwriting
+        in Clout files, covering Non-QM program names, wholesale-channel mechanics, underwriting
         concepts, real-estate-investor metrics, and regulatory frameworks. Written for
         mortgage brokers and real estate investors who need a precise answer fast.
       </p>

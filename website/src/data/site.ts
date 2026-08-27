@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     name: 'DSCR Loan',
     shortName: 'DSCR',
     shortDescription:
-      'For real estate investors qualifying on rental cash flow — no W-2s, no tax returns.',
+      'For real estate investors qualifying on rental cash flow instead of W-2s or tax returns.',
     tier: 1,
     audience: ['investor', 'broker'],
     status: 'pillar',
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     name: '1099 Only Mortgage',
     shortName: '1099 Only',
     shortDescription:
-      'For independent contractors and gig workers — qualify on gross 1099 income, not net Schedule C.',
+      'For independent contractors and gig workers qualifying on gross 1099 income, not net Schedule C.',
     tier: 2,
     audience: ['self-employed', 'broker'],
     status: 'stub',
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     name: 'Foreign National Mortgage',
     shortName: 'Foreign National',
     shortDescription:
-      'For non-US citizens investing in US real estate — qualify without a US SSN or credit history.',
+      'For non-US citizens investing in US real estate, qualifying without a US SSN or credit history.',
     tier: 2,
     audience: ['foreign', 'investor', 'broker'],
     status: 'stub',
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
     name: 'Non-Agency Second Home',
     shortName: 'Second Home',
     shortDescription:
-      'For vacation and second-home buyers — flexible underwriting outside conforming guidelines.',
+      'For vacation and second-home buyers needing flexible underwriting outside conforming guidelines.',
     tier: 3,
     audience: ['investor', 'broker'],
     status: 'stub',
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     name: 'Lite Documentation Loan',
     shortName: 'Lite Doc',
     shortDescription:
-      'For W-2 employees with limited documentation — 1 year W-2 + VOE + YTD paystub.',
+      'For W-2 employees with limited documentation: 1 year W-2 + VOE + YTD paystub.',
     tier: 4,
     audience: ['broker'],
     status: 'stub',
@@ -137,7 +137,7 @@ export const PRODUCTS: Product[] = [
     name: 'Written VOE Only',
     shortName: 'VOE Only',
     shortDescription:
-      'Qualify with an employer-completed VOE form — no pay stubs, no tax returns.',
+      'Qualify with an employer-completed VOE form: no pay stubs, no tax returns.',
     tier: 4,
     audience: ['broker'],
     status: 'stub',

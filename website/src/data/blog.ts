@@ -42,7 +42,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'place-first-non-qm-file-clout',
     title: 'How to Place Your First Non-QM File With Clout',
     description:
-      'A practical field guide for mortgage brokers placing their first Non-QM file with Clout — scenario, submission, conditions, and clear-to-close. Six concrete steps and a checklist.',
+      'A practical field guide for mortgage brokers placing their first Non-QM file with Clout: scenario, submission, conditions, and clear-to-close. Six concrete steps and a checklist.',
     category: 'For Brokers',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -51,7 +51,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'dscr-files-stuck-underwriting',
     title: 'DSCR Files Stuck in Underwriting: The Six Causes and How to Avoid Them',
     description:
-      'DSCR submissions stall in underwriting for predictable reasons — lease comps, entity vesting, reserves, appraisal scope, condo questionnaires, and DSCR math. Here is the field-tested fix for each.',
+      'DSCR submissions stall in underwriting for predictable reasons: lease comps, entity vesting, reserves, appraisal scope, condo questionnaires, and DSCR math. Here is the field-tested fix for each.',
     category: 'For Brokers',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -70,7 +70,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'conventional-vs-dscr-investment-property',
     title: 'Conventional Loan vs DSCR Loan for Investment Property: Which Actually Fits',
     description:
-      'A side-by-side comparison of conventional and DSCR investment-property loans — income documentation, LTV caps, rates, property-count limits, and the cash-flow tradeoff that decides most files.',
+      'A side-by-side comparison of conventional and DSCR investment-property loans: income documentation, LTV caps, rates, property-count limits, and the cash-flow tradeoff that decides most files.',
     category: 'Investors',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -88,7 +88,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'brrrr-refinance-dscr',
     title: 'BRRRR Refinances With DSCR: How to Pull Equity Without W-2 Income',
     description:
-      'The refi leg of the BRRRR cycle is where most investors choose DSCR — rental cash flow qualifies, not your W-2. Here is the LTV ladder, seasoning rules, and how to size the cash-out before the rehab is done.',
+      'The refi leg of the BRRRR cycle is where most investors choose DSCR. Rental cash flow qualifies, not your W-2. Here is the LTV ladder, seasoning rules, and how to size the cash-out before the rehab is done.',
     category: 'Investors',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -98,7 +98,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'bank-statement-loans-self-employed',
     title: 'Bank Statement Loans for Self-Employed Borrowers',
     description:
-      'A Bank Statement loan qualifies self-employed borrowers using deposits — not Schedule C. Here is how Clout calculates qualifying income from 12 or 24 months of statements, and what disqualifies the file.',
+      'A Bank Statement loan qualifies self-employed borrowers using deposits, not Schedule C. Here is how Clout calculates qualifying income from 12 or 24 months of statements, and what disqualifies the file.',
     category: 'Self-Employed',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -117,7 +117,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: '1099-only-mortgage-contractors',
     title: '1099 Only Mortgages: How Contractors Qualify Without Schedule C',
     description:
-      'A 1099 Only mortgage qualifies on gross 1099 income — not net Schedule C after deductions. For high-earning contractors and gig workers, this is often a 2–3× larger qualifying number than a standard mortgage.',
+      'A 1099 Only mortgage qualifies on gross 1099 income, not net Schedule C after deductions. For high-earning contractors and gig workers, this is often a 2–3× larger qualifying number than a standard mortgage.',
     category: 'Freelancers',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',
@@ -127,7 +127,7 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     slug: 'foreign-national-dscr-loans',
     title: 'Foreign National DSCR Loans: Buying US Rental Property Without a US SSN',
     description:
-      'Non-US-citizen investors can buy US rental property through a Foreign National DSCR loan — no US Social Security Number, no US credit history required. Here is the document list, LTV bands, and seasoning rules.',
+      'Non-US-citizen investors can buy US rental property through a Foreign National DSCR loan: no US Social Security Number, no US credit history required. Here is the document list, LTV bands, and seasoning rules.',
     category: 'Foreign Nationals',
     datePublished: '2026-05-27',
     dateModified: '2026-05-27',

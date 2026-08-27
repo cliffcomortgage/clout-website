@@ -44,7 +44,7 @@ const features = [
   {
     title: 'Lock from the engine',
     detail:
-      'Once a scenario matches a registered file, lock directly from Powered Up Pricing — the lock confirmation posts to TPO Connect within minutes.',
+      'Once a scenario matches a registered file, lock directly from Powered Up Pricing. The lock confirmation posts to TPO Connect within minutes.',
   },
 ];
 
@@ -58,7 +58,7 @@ const whenToUse = [
   {
     title: 'Daily rate sheet',
     body:
-      'When you want the full pricing matrix across all programs, all FICO bands, all LTV bands at once — for reference or for posting in your office. Refreshed daily by 9:30 AM ET in TPO Connect.',
+      'When you want the full pricing matrix across all programs, all FICO bands, and all LTV bands at once, for reference or for posting in your office. Refreshed daily by 9:30 AM ET in TPO Connect.',
     when: 'You want the whole grid.',
   },
   {
@@ -73,17 +73,17 @@ const faqs = [
   {
     question: 'What is Clout Powered Up Pricing?',
     answer:
-      'Powered Up Pricing is the wholesale Non-QM scenario pricing engine for Clout broker partners. It prices a borrower scenario across all 10 Clout Non-QM programs simultaneously — DSCR, Bank Statement, 1099 Only, P&L Only, Asset Qualifier, Foreign National, and more — across FICO bands, LTV bands, and lock periods. Powered by LoanNEX.',
+      'Powered Up Pricing is the wholesale Non-QM scenario pricing engine for Clout broker partners. It prices a borrower scenario across all 10 Clout Non-QM programs simultaneously, including DSCR, Bank Statement, 1099 Only, P&L Only, Asset Qualifier, and Foreign National, across FICO bands, LTV bands, and lock periods. Powered by LoanNEX.',
   },
   {
     question: 'Who has access to Powered Up Pricing?',
     answer:
-      'Active Clout wholesale partner brokers. Access is provisioned during onboarding alongside TPO Connect — usually within 24 hours of broker package approval. New brokers should start with the TPO Connect partner hub to apply.',
+      'Active Clout wholesale partner brokers. Access is provisioned during onboarding alongside TPO Connect, usually within 24 hours of broker package approval. New brokers should start with the TPO Connect partner hub to apply.',
   },
   {
     question: 'How is Powered Up Pricing different from the daily rate sheet?',
     answer:
-      'The daily rate sheet is a full matrix showing every program, FICO band, and LTV band — useful for reference. Powered Up Pricing takes a specific borrower scenario and returns pricing only for that scenario across programs that fit. Use the rate sheet when you want the whole grid; use Powered Up Pricing when you have a real file in front of you.',
+      'The daily rate sheet is a full matrix showing every program, FICO band, and LTV band. It is useful for reference. Powered Up Pricing takes a specific borrower scenario and returns pricing only for that scenario across programs that fit. Use the rate sheet when you want the whole grid; use Powered Up Pricing when you have a real file in front of you.',
   },
   {
     question: 'Can I lock pricing directly from Powered Up Pricing?',
@@ -93,17 +93,17 @@ const faqs = [
   {
     question: 'How often is pricing refreshed?',
     answer:
-      'Powered Up Pricing reflects the same wholesale rate sheet that drives TPO Connect decisions — refreshed daily by 9:30 AM ET. Intraday changes (rate-environment-driven repricing) post to both systems simultaneously when they occur.',
+      'Powered Up Pricing reflects the same wholesale rate sheet that drives TPO Connect decisions, refreshed daily by 9:30 AM ET. Intraday changes (rate-environment-driven repricing) post to both systems simultaneously when they occur.',
   },
   {
     question: 'What if my scenario does not fit any program?',
     answer:
-      'Powered Up Pricing returns "no program fit" rather than a misleading quote. When that happens, send the scenario to the desk — email PowerUp@CLOUTwmb.com or call 844-477-3111. The scenario desk reviews edge cases pricing alone cannot evaluate (credit events, foreign credit, unusual property types).',
+      'Powered Up Pricing returns "no program fit" rather than a misleading quote. When that happens, send the scenario to the desk: email PowerUp@CLOUTwmb.com or call 844-477-3111. The scenario desk reviews edge cases pricing alone cannot evaluate (credit events, foreign credit, unusual property types).',
   },
   {
     question: 'Can borrowers see Powered Up Pricing?',
     answer:
-      'Powered Up Pricing is a broker tool — pricing visibility is for the broker. Brokers can export scenario pricing as a borrower-ready rate-sheet PDF with appropriate disclosures, which is the typical way pricing reaches the borrower.',
+      'Powered Up Pricing is a broker tool, and pricing visibility is for the broker. Brokers can export scenario pricing as a borrower-ready rate-sheet PDF with appropriate disclosures, which is the typical way pricing reaches the borrower.',
   },
 ];
 
@@ -120,7 +120,7 @@ const pricingServiceSchema = {
   provider: { '@id': `${SITE.url}#organization` },
   audience: {
     '@type': 'BusinessAudience',
-    audienceType: 'Licensed mortgage brokers and brokerages (NMLS-registered) — active Clout wholesale partners',
+    audienceType: 'Licensed mortgage brokers and brokerages (NMLS-registered), active Clout wholesale partners',
   },
   url: pageUrl,
   hasOfferCatalog: {
@@ -139,8 +139,8 @@ const pricingServiceSchema = {
 ---
 
 <Layout
-  title="Clout Powered Up Pricing — Wholesale Non-QM Scenario Pricing Engine"
-  description="Powered Up Pricing is Clout's wholesale Non-QM scenario pricing engine — live multi-program pricing across DSCR, Bank Statement, 1099, Foreign National, and Asset Qualifier by FICO band, LTV band, and lock period. For active Clout partner brokers."
+  title="Clout Powered Up Pricing: Wholesale Non-QM Scenario Pricing Engine"
+  description="Powered Up Pricing is Clout's wholesale Non-QM scenario pricing engine, with live multi-program pricing across DSCR, Bank Statement, 1099, Foreign National, and Asset Qualifier by FICO band, LTV band, and lock period. For active Clout partner brokers."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[jsonLd(pricingServiceSchema), jsonLd(faqSchema(faqs))]}
@@ -148,11 +148,11 @@ const pricingServiceSchema = {
   <section class="hero">
     <div class="container">
       <p class="eyebrow">Wholesale pricing engine · NMLS #{SITE.nmlsId}</p>
-      <h1>Powered Up Pricing — live Non-QM scenario pricing for brokers.</h1>
+      <h1>Powered Up Pricing: live Non-QM scenario pricing for brokers.</h1>
       <p class="answer-first lead">
         Powered Up Pricing is the wholesale Non-QM scenario pricing engine Clout broker
-        partners use to price a borrower scenario across all 10 Non-QM programs at once —
-        DSCR, Bank Statement, 1099 Only, Foreign National, Asset Qualifier, and more —
+        partners use to price a borrower scenario across all 10 Non-QM programs at once,
+        including DSCR, Bank Statement, 1099 Only, Foreign National, Asset Qualifier, and more,
         across FICO bands, LTV bands, and lock periods. Powered by LoanNEX.
       </p>
       <div class="hero-cta">
@@ -232,7 +232,7 @@ const pricingServiceSchema = {
           <span class="step-n">01</span>
           <div>
             <h3>Apply to become a Clout partner</h3>
-            <p>Email <strong>PowerUp@CLOUTwmb.com</strong> or call <strong>{SITE.phoneDisplay}</strong>. Standard wholesale broker package — most files approved in 5–7 business days.</p>
+            <p>Email <strong>PowerUp@CLOUTwmb.com</strong> or call <strong>{SITE.phoneDisplay}</strong>. Standard wholesale broker package; most files approved in 5–7 business days.</p>
           </div>
         </li>
         <li class="step">
@@ -246,7 +246,7 @@ const pricingServiceSchema = {
           <span class="step-n">03</span>
           <div>
             <h3>Sign in and price your first scenario</h3>
-            <p>Powered Up Pricing opens to your broker dashboard. Enter borrower FICO, loan amount, LTV, and property details — pricing returns across every Non-QM program that fits.</p>
+            <p>Powered Up Pricing opens to your broker dashboard. Enter borrower FICO, loan amount, LTV, and property details, and pricing returns across every Non-QM program that fits.</p>
           </div>
         </li>
       </ol>

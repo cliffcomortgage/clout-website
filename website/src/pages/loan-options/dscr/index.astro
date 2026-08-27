@@ -15,7 +15,7 @@ const dateModified = '2026-05-27';
 
 const tldr = [
   { label: 'Who it\'s for', value: 'Real estate investors qualifying on rental income' },
-  { label: 'Income docs', value: 'None — qualify on the property, not your W-2' },
+  { label: 'Income docs', value: 'None: qualify on the property, not your W-2' },
   { label: 'Min DSCR', value: '0.75 (program-dependent)' },
   { label: 'Loan amount', value: 'Up to $3.5M+ (program-dependent)' },
   { label: 'Min FICO', value: '620' },
@@ -68,7 +68,7 @@ const faqs = [
   {
     question: 'Who qualifies for a Clout DSCR loan?',
     answer:
-      'Real estate investors purchasing or refinancing investment properties — single-family rentals, 2–4 unit properties, condos, and short-term rentals. Investors can hold title in a personal name or LLC. First-time investors are eligible. Borrowers do not need W-2 income, tax returns, or employment verification.',
+      'Real estate investors purchasing or refinancing investment properties: single-family rentals, 2–4 unit properties, condos, and short-term rentals. Investors can hold title in a personal name or LLC. First-time investors are eligible. Borrowers do not need W-2 income, tax returns, or employment verification.',
   },
   {
     question: 'What\'s the minimum DSCR for a Clout loan?',
@@ -98,7 +98,7 @@ const faqs = [
   {
     question: 'How fast does Clout close a DSCR loan?',
     answer:
-      'For clean files, Clout DSCR loans typically close in 15–25 days from approval. States that require attorney involvement in closing may add 3–5 days — check state-specific guidance on the state licensing page. Short-term rental files with AirDNA validation may add 5–7 days for income documentation review.',
+      'For clean files, Clout DSCR loans typically close in 15–25 days from approval. States that require attorney involvement in closing may add 3–5 days; check the state licensing page for state-specific guidance. Short-term rental files with AirDNA validation may add 5–7 days for income documentation review.',
   },
   {
     question: 'Can I get a DSCR loan in an LLC?',
@@ -108,22 +108,22 @@ const faqs = [
   {
     question: 'Does Clout do DSCR cash-out refinances?',
     answer:
-      'Yes. Clout DSCR cash-out refinances are typically capped at 75% LTV (purchase max is 80%). Cash-out proceeds can be used for any business purpose — additional property purchases, renovations, debt consolidation against the investor portfolio.',
+      'Yes. Clout DSCR cash-out refinances are typically capped at 75% LTV (purchase max is 80%). Cash-out proceeds can be used for any business purpose: additional property purchases, renovations, or debt consolidation against the investor portfolio.',
   },
   {
     question: 'What states does Clout offer DSCR loans in?',
     answer:
-      `Clout offers DSCR loans in ${STATES.map((s) => s.name).join(', ')}. Each state has specific licensing disclosures and underwriting nuances (e.g., NYC co-op eligibility limits, attorney-closing in New York) — see the state licensing page for details.`,
+      `Clout offers DSCR loans in ${STATES.map((s) => s.name).join(', ')}. Each state has specific licensing disclosures and underwriting nuances (e.g., NYC co-op eligibility limits, attorney-closing in New York). See the state licensing page for details.`,
   },
   {
     question: 'What\'s the difference between a DSCR loan and a conventional investment property mortgage?',
     answer:
-      'Conventional investment mortgages (Fannie/Freddie) qualify the borrower on their personal income, debt-to-income ratio, and tax returns. DSCR loans qualify on the property\'s rental income only — no personal income docs required. DSCR is typically priced 1–2% higher than conventional but enables investors who can\'t qualify on personal income or have hit Fannie/Freddie property limits.',
+      'Conventional investment mortgages (Fannie/Freddie) qualify the borrower on their personal income, debt-to-income ratio, and tax returns. DSCR loans qualify on the property\'s rental income only, with no personal income docs required. DSCR is typically priced 1–2% higher than conventional but enables investors who can\'t qualify on personal income or have hit Fannie/Freddie property limits.',
   },
   {
     question: 'Can I get a DSCR loan with a 0.75 DSCR?',
     answer:
-      'Yes — Clout offers a sub-1.0 DSCR program for properties down to 0.75 DSCR with compensating factors: higher down payment (typically 25–30%), 12+ months reserves, 680+ FICO, and a clean credit history. The program is priced higher than the standard 1.0+ DSCR tiers.',
+      'Yes. Clout offers a sub-1.0 DSCR program for properties down to 0.75 DSCR with compensating factors: higher down payment (typically 25–30%), 12+ months reserves, 680+ FICO, and a clean credit history. The program is priced higher than the standard 1.0+ DSCR tiers.',
   },
 ];
 
@@ -132,7 +132,7 @@ const comparisonRows = [
     feature: 'Income documentation required',
     dscr: 'None (property qualifies)',
     conventional: 'W-2s, tax returns, paystubs',
-    hardMoney: 'Light — asset/equity focus',
+    hardMoney: 'Light (asset/equity focus)',
   },
   {
     feature: 'Property type',
@@ -193,7 +193,7 @@ const productSchema = mortgageLoanSchema({
 });
 
 const article = articleSchema({
-  headline: 'DSCR Loans for Real Estate Investors — Clout',
+  headline: 'DSCR Loans for Real Estate Investors: Clout',
   description:
     'Complete guide to Clout\'s DSCR loan program: qualifying criteria, calculation methodology, scenarios, state availability, and FAQ.',
   url: pageUrl,
@@ -205,7 +205,7 @@ const article = articleSchema({
 
 <Layout
   title="DSCR Loans for Real Estate Investors"
-  description="DSCR loans from Clout — qualify on rental cash flow, not W-2s. Programs from 0.75 DSCR, up to $3.5M, 15–25 day close. Available in 16 states + D.C."
+  description="DSCR loans from Clout. Qualify on rental cash flow, not W-2s. Programs from 0.75 DSCR, up to $3.5M, 15–25 day close. Available in 16 states + D.C."
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   extraSchema={[
@@ -234,7 +234,7 @@ const article = articleSchema({
 
       <p class="answer-first">
         A DSCR loan is a Non-QM mortgage that qualifies real estate investors on the
-        rental cash flow of the property — not on the borrower's W-2s or tax returns.
+        rental cash flow of the property, not on the borrower's W-2s or tax returns.
         Clout offers DSCR programs from 0.75 DSCR up to $3.5M+, with 15–25 day closings
         across 16 states and D.C.
       </p>
@@ -272,7 +272,7 @@ const article = articleSchema({
         A DSCR loan steps around that wall. The lender qualifies the property on its
         own: <strong>gross monthly rent divided by monthly PITIA</strong> (principal,
         interest, taxes, insurance, association dues). If the ratio meets the program's
-        minimum, the deal moves forward — regardless of the borrower's personal income.
+        minimum, the deal moves forward regardless of the borrower's personal income.
       </p>
 
       <h2 id="dscr-calculation">How is DSCR calculated?</h2>
@@ -348,7 +348,7 @@ const article = articleSchema({
       <h2 id="states">DSCR loans by state</h2>
       <p>
         Clout offers DSCR loans across all {STATES.length} licensed states and D.C. Each
-        state has unique market characteristics — Texas leads on investor volume,
+        state has unique market characteristics: Texas leads on investor volume,
         Tennessee and Colorado on STR demand, and New York on attorney-closing process
         discipline.
       </p>
@@ -376,7 +376,7 @@ const article = articleSchema({
       <section class="end-cta">
         <h2>Ready to run a DSCR scenario?</h2>
         <p>
-          Tell us about the property and the investor — we'll come back with a same-day
+          Tell us about the property and the investor. We'll come back with a same-day
           eligibility read and an indicative term sheet. Brokers, place files through our
           wholesale partner portal.
         </p>
