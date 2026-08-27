@@ -434,9 +434,8 @@ const faqs = [
   .hero-photo-frame {
     position: relative;
     aspect-ratio: 4 / 5;
-    border-radius: var(--radius-xl);
-    overflow: hidden;
-    box-shadow: 0 24px 48px -20px color-mix(in srgb, var(--color-brand-deep) 35%, transparent);
+    -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 40%, black 40%, transparent 88%);
+    mask-image: radial-gradient(ellipse 68% 72% at 50% 40%, black 40%, transparent 88%);
   }
   .hero-photo-frame img {
     display: block;
