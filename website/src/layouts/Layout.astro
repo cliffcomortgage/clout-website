@@ -25,6 +25,8 @@ interface Props {
   extraSchema?: string[];
   /** Optional noindex for search/utility pages. */
   noindex?: boolean;
+  /** Porcelain-background footer instead of the default dark Deep Reserve footer. */
+  footerLight?: boolean;
 }
 
 const {
@@ -35,6 +37,7 @@ const {
   breadcrumbs,
   extraSchema = [],
   noindex = false,
+  footerLight = false,
 } = Astro.props;
 
 const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
@@ -85,6 +88,6 @@ const schemaBlocks: string[] = [
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer light={footerLight} />
   </body>
 </html>

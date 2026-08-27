@@ -2,7 +2,7 @@
  * Single source of truth for site-wide constants:
  *  - Organization identity (used in JSON-LD schema)
  *  - Product catalog (10 Non-QM programs)
- *  - State catalog (6 licensed states with metadata)
+ *  - State catalog (16 licensed states + D.C. with metadata)
  *
  * Per:
  *  - ~/clout-website/seo-aeo-research/01-technical-seo.md (schema)

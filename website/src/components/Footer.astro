@@ -1,18 +1,29 @@
 ---
 import { SITE, PRODUCTS, STATES } from '../data/site';
 
+interface Props {
+  /** Porcelain background + dark text, for pages that don't want the default
+   *  dark Deep Reserve footer (e.g. the homepage's alternating porcelain/silk layout). */
+  light?: boolean;
+}
+
+const { light = false } = Astro.props;
 const year = new Date().getFullYear();
 const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
 ---
 
-<footer class="site-footer">
-  <div class="spark-tile" aria-hidden="true"></div>
+<footer class:list={['site-footer', { light }]}>
+  {!light && <div class="spark-tile" aria-hidden="true"></div>}
 
   <div class="footer-inner">
 
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="/brand/logo-mono-white.svg" alt={`${SITE.name} logo`} height="36" />
+        <img
+          src={light ? '/brand/logo-mono-dark.svg' : '/brand/logo-mono-white.svg'}
+          alt={`${SITE.name} logo`}
+          height="36"
+        />
         <p class="footer-tagline">Your pipeline, accelerated.</p>
         <p class="footer-contact">
           <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>
@@ -220,5 +231,42 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
   @media (max-width: 560px) {
     .footer-cols { grid-template-columns: 1fr; }
     .footer-inner { padding: 3.5rem 1.25rem 2rem; }
+  }
+
+  /* ── Light variant — porcelain bg, dark text (opt-in via the `light` prop) ── */
+  .site-footer.light {
+    background: var(--color-surface);
+    color: var(--color-ink);
+  }
+  .site-footer.light .footer-tagline {
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+  .site-footer.light .footer-contact a {
+    color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  }
+  .site-footer.light .footer-contact span {
+    color: color-mix(in srgb, var(--color-ink) 25%, transparent);
+  }
+  .site-footer.light .footer-address {
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+  .site-footer.light .footer-col a {
+    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
+  }
+  .site-footer.light .footer-col a:hover {
+    color: var(--color-brand-deep);
+  }
+  .site-footer.light .footer-hr {
+    background: var(--color-line);
+  }
+  .site-footer.light .compliance-block {
+    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+  .site-footer.light .compliance-block a {
+    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
+    text-decoration-color: var(--color-line);
+  }
+  .site-footer.light .footer-copy {
+    color: color-mix(in srgb, var(--color-ink) 32%, transparent);
   }
 </style>
