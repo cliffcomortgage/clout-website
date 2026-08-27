@@ -155,6 +155,50 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ============================================================
+   Scroll progress bar (site-wide) — see Layout.astro for the script
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-brand-warmth), var(--color-brand-bright));
+  z-index: 200;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #scroll-progress { transition: width 80ms linear; }
+}
+
+/* ============================================================
+   Fade-up scroll reveals — opt in with class="reveal-up"
+   Default state is fully visible (safe for no-JS browsers and any
+   crawler that doesn't execute JS); the hidden starting state only
+   applies once documentElement.classList has "js" on it (set by an
+   inline script at the very top of <head> in Layout.astro), so a
+   visitor never sees a flash of hidden content that then never
+   reveals itself.
+   ============================================================ */
+html.js .reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js .reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Selection */
 ::selection {
   background: color-mix(in srgb, var(--color-brand) 24%, transparent);

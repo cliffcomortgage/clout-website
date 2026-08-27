@@ -126,7 +126,7 @@ const faqs = [
   <!-- ═══ PROGRAMS ════════════════════════════════════════ -->
   <section class="programs-section">
     <div class="wrap">
-      <header class="section-head">
+      <header class="section-head reveal-up">
         <p class="eyebrow">Loan programs</p>
         <h2>The programs your deals <span class="jitzu">need.</span></h2>
         <p class="section-subhead">
@@ -135,8 +135,12 @@ const faqs = [
         </p>
       </header>
       <div class="programs-grid">
-        {featuredProducts.map((p) => (
-          <a href={`/loan-options/${p.slug}/`} class="program-card">
+        {featuredProducts.map((p, i) => (
+          <a
+            href={`/loan-options/${p.slug}/`}
+            class="program-card reveal-up"
+            style={`--reveal-delay: ${i * 60}ms`}
+          >
             <span class="program-tier">Tier {p.tier}</span>
             <h3>{p.shortName}</h3>
             <p>{p.shortDescription}</p>
@@ -158,7 +162,7 @@ const faqs = [
   <!-- ═══ CHANNELS ═══════════════════════════════════════ -->
   <section class="channels-section">
     <div class="wrap channels-inner">
-      <header class="channels-head">
+      <header class="channels-head reveal-up">
         <p class="ch-eyebrow">Two channels</p>
         <h2 class="channels-title">
           Built for brokers.<br />
@@ -166,7 +170,7 @@ const faqs = [
         </h2>
       </header>
       <div class="channels-grid">
-        <a href="/brokers/" class="channel-card">
+        <a href="/brokers/" class="channel-card reveal-up">
           <p class="channel-eyebrow">Mortgage brokers</p>
           <h3>Wholesale Non-QM</h3>
           <p>
@@ -176,7 +180,7 @@ const faqs = [
           </p>
           <span class="channel-link">Broker partner channel →</span>
         </a>
-        <a href="/investors/" class="channel-card">
+        <a href="/investors/" class="channel-card reveal-up" style="--reveal-delay: 80ms">
           <p class="channel-eyebrow">Real estate investors</p>
           <h3>Direct-to-Investor</h3>
           <p>
@@ -193,7 +197,7 @@ const faqs = [
   <!-- ═══ LOCATIONS ══════════════════════════════════════ -->
   <section class="locations-section">
     <div class="wrap">
-      <header class="section-head">
+      <header class="section-head reveal-up">
         <p class="eyebrow">Coverage</p>
         <h2>{STATES.length} states. <span class="jitzu">Local depth.</span></h2>
         <p class="section-subhead">
@@ -202,8 +206,12 @@ const faqs = [
         </p>
       </header>
       <div class="states-grid">
-        {STATES.map((s) => (
-          <a href={`/locations/${s.slug}/`} class="state-card">
+        {STATES.map((s, i) => (
+          <a
+            href={`/locations/${s.slug}/`}
+            class="state-card reveal-up"
+            style={`--reveal-delay: ${Math.min(i, 10) * 30}ms`}
+          >
             <p class="state-abbr">{s.abbr}</p>
             <h3>{s.name}</h3>
             <p class="state-metros">{s.topMetros.join(' · ')}</p>
@@ -216,13 +224,19 @@ const faqs = [
   <!-- ═══ FAQ ════════════════════════════════════════════ -->
   <section class="faq-section">
     <div class="wrap">
-      <header class="section-head">
+      <header class="section-head reveal-up">
         <p class="eyebrow">Common questions</p>
         <h2>What people ask about <span class="jitzu">Clout.</span></h2>
       </header>
       <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
-        {faqs.map((f) => (
-          <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        {faqs.map((f, i) => (
+          <details
+            itemscope
+            itemprop="mainEntity"
+            itemtype="https://schema.org/Question"
+            class="reveal-up"
+            style={`--reveal-delay: ${i * 50}ms`}
+          >
             <summary itemprop="name">{f.question}</summary>
             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <p itemprop="text">{f.answer}</p>

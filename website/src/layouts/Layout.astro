@@ -53,6 +53,7 @@ const schemaBlocks: string[] = [
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
@@ -83,11 +84,51 @@ const schemaBlocks: string[] = [
     ))}
   </head>
   <body>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <a href="#main" class="skip-link">Skip to main content</a>
     <Header />
     <main id="main">
       <slot />
     </main>
     <Footer light={footerLight} />
+    <script>
+      // Scroll progress bar — informational, not decorative, so it still
+      // renders (just without the eased width transition) under
+      // prefers-reduced-motion rather than being removed entirely.
+      const bar = document.getElementById('scroll-progress');
+      if (bar) {
+        const update = () => {
+          const doc = document.documentElement;
+          const scrollable = doc.scrollHeight - doc.clientHeight;
+          const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+          bar.style.width = pct + '%';
+        };
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      }
+
+      // Fade-up reveals: opt in per-element with class="reveal-up".
+      // Respects prefers-reduced-motion by just showing everything immediately.
+      const revealEls = document.querySelectorAll('.reveal-up');
+      if (revealEls.length) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          revealEls.forEach((el) => el.classList.add('is-visible'));
+        } else {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+          );
+          revealEls.forEach((el) => io.observe(el));
+        }
+      }
+    </script>
   </body>
 </html>
