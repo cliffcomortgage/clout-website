@@ -301,29 +301,25 @@ const faqs = [
     position: relative;
     overflow: hidden;
   }
-  /* Right-anchored panel, not full-bleed — the source photo is portrait,
-     so stretching it across the full (landscape) hero width would crush
-     it vertically and crop the face out. Constraining the width keeps a
-     natural crop. The photo itself (not a separate overlay) is masked to
-     fade out on its left edge, so the hero's own porcelain background
-     shows through directly underneath — guarantees an exact color match
-     with no visible seam between two overlapping layers. */
+  /* Full-bleed now that the source photo is landscape (was portrait — a
+     narrow right-anchored panel was the workaround for that). The right
+     third renders at full opacity; the left two-thirds is where the mask
+     transitions from transparent to opaque, so the hero's own porcelain
+     background shows through underneath — no separate overlay layer, so
+     no seam. */
   .hero-photo-bg {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 32%;
+    inset: 0;
     z-index: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%);
-    mask-image: linear-gradient(to right, transparent 0%, black 60%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 44%, black 66.7%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 44%, black 66.7%, black 100%);
   }
   .hero-photo-bg img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 8%;
+    object-position: center 32%;
   }
   .hero-inner {
     position: relative;
