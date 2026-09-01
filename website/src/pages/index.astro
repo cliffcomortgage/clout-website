@@ -3,10 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import { SITE, PRODUCTS, STATES } from '../data/site';
 import { faqSchema, jsonLd } from '../data/schema';
 
-const tier1Products = PRODUCTS.filter((p) => p.tier === 1);
-const tier2Products = PRODUCTS.filter((p) => p.tier === 2);
-const tier3Products = PRODUCTS.filter((p) => p.tier === 3);
-const featuredProducts = [...tier1Products, ...tier2Products, ...tier3Products];
 
 const faqs = [
   {
@@ -134,7 +130,7 @@ const faqs = [
         </p>
       </header>
       <div class="programs-grid">
-        {featuredProducts.map((p, i) => (
+        {PRODUCTS.map((p, i) => (
           <a
             href={`/loan-options/${p.slug}/`}
             class="program-card reveal-up"
@@ -147,14 +143,6 @@ const faqs = [
           </a>
         ))}
       </div>
-      <p class="tier4-note">
-        Plus three additional programs for narrow use cases:
-        {PRODUCTS.filter((p) => p.tier === 4).map((p, i, arr) => (
-          <>
-            <a href={`/loan-options/${p.slug}/`}>{p.shortName}</a>{i < arr.length - 1 && ', '}
-          </>
-        ))}.
-      </p>
     </div>
   </section>
 
@@ -557,15 +545,6 @@ const faqs = [
     color: var(--color-brand-deep);
     margin-top: 0.25rem;
   }
-  .tier4-note {
-    color: var(--color-mid);
-    font-size: var(--text-meta);
-  }
-  .tier4-note a {
-    color: var(--color-ink-soft);
-    text-decoration: underline;
-  }
-
   @media (max-width: 960px) {
     .programs-grid { grid-template-columns: repeat(2, 1fr); }
   }

@@ -1,9 +1,5 @@
 ---
 import { SITE, PRODUCTS, STATES } from '../data/site';
-
-const tier1Products = PRODUCTS.filter((p) => p.tier === 1);
-const tier2Products = PRODUCTS.filter((p) => p.tier === 2);
-const featuredProducts = [...tier1Products, ...tier2Products];
 ---
 
 <header class="site-header">
@@ -18,7 +14,7 @@ const featuredProducts = [...tier1Products, ...tier2Products];
           <button type="button" aria-haspopup="true" aria-expanded="false">Loan Options</button>
           <div class="menu-panel">
             <div class="menu-grid">
-              {featuredProducts.map((p) => (
+              {PRODUCTS.map((p) => (
                 <a href={`/loan-options/${p.slug}/`} class="menu-item">
                   <span class="menu-name">{p.shortName}</span>
                   <span class="menu-desc">{p.shortDescription}</span>

@@ -13,10 +13,7 @@ const breadcrumbs = [
   { name: 'TPO Connect', url: pageUrl },
 ];
 
-const tier1 = PRODUCTS.filter((p) => p.tier === 1);
-const tier2 = PRODUCTS.filter((p) => p.tier === 2);
-const tier3 = PRODUCTS.filter((p) => p.tier === 3);
-const featuredProducts = [...tier1, ...tier2, ...tier3];
+const featuredProducts = PRODUCTS;
 
 // What's inside the portal — concrete, AEO-citable feature list
 const portalFeatures = [
@@ -340,14 +337,6 @@ const serviceSchema = {
           </a>
         ))}
       </div>
-      <p class="tier4-note">
-        Plus three narrow-use programs:
-        {PRODUCTS.filter((p) => p.tier === 4).map((p, i, arr) => (
-          <>
-            <a href={`/loan-options/${p.slug}/`}>{p.shortName}</a>{i < arr.length - 1 && ', '}
-          </>
-        ))}.
-      </p>
     </div>
   </section>
 
@@ -665,8 +654,6 @@ const serviceSchema = {
   .product-card h3 { font-size: 1.125rem; margin: 0; }
   .product-card p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); }
   .product-link { color: var(--color-brand-deep); font-weight: 600; margin-top: auto; font-size: var(--text-small); }
-  .tier4-note { color: var(--color-mid); margin-top: 1.5rem; font-size: var(--text-small); }
-  .tier4-note a { color: var(--color-ink-soft); }
 
   /* Onboarding steps */
   .step-list {
