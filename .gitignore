@@ -39,3 +39,10 @@ website/screenshots/
 
 # Local Astro types cache
 .astro/
+
+# Local working assets — deliberately untracked.
+# This repo is public and deploys to GitHub Pages, and git keeps binaries
+# forever, so finished creative stays on the fileshare instead. Anything the
+# site actually serves belongs in website/public/.
+Photos/
+documents/
