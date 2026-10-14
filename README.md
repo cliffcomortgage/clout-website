@@ -47,6 +47,39 @@ clout-website/
 
 See `branding/palette.pdf` and the variant overviews under `branding/{logo,icon}/overview.pdf`.
 
+### Website palette — inverse of Cliffco
+
+The palette above is the brand guide and still governs print. The **website**
+runs a different system: Cliffco and Clout are sister sites, and
+[cliffco-site](https://cliffco-site.vercel.app/) is a black-on-white monochrome
+design. Clout is the same system inverted — white on black.
+
+| Role | Hex | Note |
+|---|---|---|
+| Page background | `#0D0D0D` | same black as Cliffco's ink |
+| Section band | `#151517` | alternating band |
+| Raised panel | `#1C1A20` | card hover, dropdowns |
+| Primary text | `#FFFFFF` | |
+| Body copy | `#C2C4C4` | |
+| Muted / labels | `#8D9090` | replaced the copper accent |
+| Hairline | `#2A2A2D` | |
+| Teal accent | `#03BFB5` | the only colour; rationed |
+
+Teal is the one thing that distinguishes Clout from Cliffco visually, so it is
+used sparingly: eyebrow rules, stat figures, link hovers, focus rings. It never
+fills a button or a card. The copper accent `#C4572A` is retired on the web.
+
+Three pages (brokers, TPO Connect, pricing) carry a `.band-invert` section: a
+**solid white band on the black page**, mirroring Cliffco's solid-black bands on
+its white page. It was `.band-dark` while the site was light.
+
+**Typography:** the site loads the same stack as cliffco-site — **Outfit**
+(300–800) for headings and body, **IBM Plex Mono** for eyebrows and small
+uppercase labels, Montserrat 600 for the logo. Grift and Jitzu are no longer
+used on the web: their trial licences do not cover web use, and matching
+Cliffco's letterforms is what makes the two sites read as one family. The font
+files remain under `website/public/fonts/` and `branding/` for print.
+
 ## Website — local dev
 
 ```sh

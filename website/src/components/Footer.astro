@@ -1,29 +1,17 @@
 ---
 import { SITE, PRODUCTS, STATES } from '../data/site';
 
-interface Props {
-  /** Porcelain background + dark text, for pages that don't want the default
-   *  dark Deep Reserve footer (e.g. the homepage's alternating porcelain/silk layout). */
-  light?: boolean;
-}
-
-const { light = false } = Astro.props;
 const year = new Date().getFullYear();
 const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
 ---
 
-<footer class:list={['site-footer', { light }]}>
-  {!light && <div class="spark-tile" aria-hidden="true"></div>}
+<footer class="site-footer">
 
   <div class="footer-inner">
 
     <div class="footer-top">
       <div class="footer-brand">
-        <img
-          src={light ? '/brand/logo-mono-dark.svg' : '/brand/logo-mono-white.svg'}
-          alt={`${SITE.name} logo`}
-          height="36"
-        />
+        <img src="/brand/logo-mono-white.svg" alt={`${SITE.name} logo`} height="36" />
         <p class="footer-tagline">Your pipeline, accelerated.</p>
         <p class="footer-contact">
           <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a>
@@ -109,8 +97,9 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
 
 <style>
   .site-footer {
-    background: var(--color-brand-deep);
-    color: var(--color-paper);
+    background: var(--color-paper);
+    color: var(--color-ink-soft);
+    border-top: 1px solid var(--color-line);
     position: relative;
     overflow: hidden;
   }
@@ -138,7 +127,8 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
   }
   .footer-tagline {
     font-family: var(--font-display);
-    font-weight: 700;
+    font-weight: 300;
+    font-size: 1.0625rem;
     font-size: 1.0625rem;
     color: rgba(255, 255, 255, 0.4);
     margin: 0 0 1.25rem;
@@ -174,12 +164,12 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
   }
 
   .footer-col-label {
-    font-family: var(--font-accent);
-    font-size: 0.625rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 700;
-    color: var(--color-brand-warmth);
+    font-weight: 600;
+    color: var(--color-label);
     margin: 0 0 1rem;
     display: block;
   }
@@ -202,7 +192,7 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
   .footer-hr {
     border: 0;
     height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-line);
     margin: 0 0 2rem;
   }
 
@@ -233,40 +223,4 @@ const topProducts = PRODUCTS.filter((p) => p.tier <= 2);
     .footer-inner { padding: 3.5rem 1.25rem 2rem; }
   }
 
-  /* ── Light variant — porcelain bg, dark text (opt-in via the `light` prop) ── */
-  .site-footer.light {
-    background: var(--color-surface);
-    color: var(--color-ink);
-  }
-  .site-footer.light .footer-tagline {
-    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
-  }
-  .site-footer.light .footer-contact a {
-    color: color-mix(in srgb, var(--color-ink) 85%, transparent);
-  }
-  .site-footer.light .footer-contact span {
-    color: color-mix(in srgb, var(--color-ink) 25%, transparent);
-  }
-  .site-footer.light .footer-address {
-    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
-  }
-  .site-footer.light .footer-col a {
-    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
-  }
-  .site-footer.light .footer-col a:hover {
-    color: var(--color-brand-deep);
-  }
-  .site-footer.light .footer-hr {
-    background: var(--color-line);
-  }
-  .site-footer.light .compliance-block {
-    color: color-mix(in srgb, var(--color-ink) 45%, transparent);
-  }
-  .site-footer.light .compliance-block a {
-    color: color-mix(in srgb, var(--color-ink) 65%, transparent);
-    text-decoration-color: var(--color-line);
-  }
-  .site-footer.light .footer-copy {
-    color: color-mix(in srgb, var(--color-ink) 32%, transparent);
-  }
 </style>

@@ -221,7 +221,7 @@ const pricingServiceSchema = {
     </div>
   </section>
 
-  <section class="band band-dark">
+  <section class="band band-invert">
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Access</p>
@@ -314,12 +314,13 @@ const pricingServiceSchema = {
   .band { padding: 4rem 0; }
   .band-tldr { padding-top: 0; margin-top: -1.5rem; position: relative; z-index: 1; }
   .band-surface { background: var(--color-surface); }
-  .band-dark { background: var(--color-brand-deep); color: var(--color-paper); }
-  .band-dark .eyebrow { color: var(--color-brand-bright); }
-  .band-dark h2, .band-dark h3 { color: var(--color-paper); }
+  .band-invert { background: var(--color-ink); color: var(--color-paper); }
+  .band-invert .eyebrow { color: var(--color-paper); }
+  .band-invert .eyebrow::before { background: var(--color-paper); }
+  .band-invert h2, .band-invert h3 { color: var(--color-paper); }
   .band-compliance { padding: 2rem 0 3.5rem; }
 
-  .band-tldr .tldr { background: var(--color-paper); box-shadow: 0 12px 40px -24px rgba(0, 65, 70, 0.18); }
+  .band-tldr .tldr { background: var(--color-paper); box-shadow: 0 12px 40px -24px rgba(0, 0, 0, 0.55); }
   .band-tldr .tldr ul { grid-template-columns: repeat(2, 1fr); gap: 0; column-gap: 2.5rem; }
   @media (max-width: 720px) { .band-tldr .tldr ul { grid-template-columns: 1fr; } }
 
@@ -341,7 +342,7 @@ const pricingServiceSchema = {
   .feature-card:hover {
     border-color: var(--color-brand);
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px -18px rgba(1, 128, 118, 0.22);
+    box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.55);
   }
   .feature-card h3 { font-size: 1.0625rem; margin: 0 0 0.5rem; color: var(--color-brand-deep); }
   .feature-card p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); line-height: 1.6; }
@@ -360,8 +361,8 @@ const pricingServiceSchema = {
     background: var(--color-paper);
   }
   .compare-card h3 { margin: 0 0 0.5rem; font-size: 1.125rem; color: var(--color-brand-deep); }
-  .compare-when { margin: 0 0 0.5rem; font-size: var(--text-small); color: var(--color-brand-warmth); font-weight: 500; }
-  .compare-when strong { color: var(--color-brand-warmth); font-weight: 700; }
+  .compare-when { margin: 0 0 0.5rem; font-size: var(--text-small); color: var(--color-label); font-weight: 500; }
+  .compare-when strong { color: var(--color-label); font-weight: 700; }
   .compare-card p:last-child { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); line-height: 1.65; }
 
   /* Steps */
@@ -375,7 +376,7 @@ const pricingServiceSchema = {
   }
   .step {
     background: color-mix(in srgb, var(--color-paper) 6%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-brand-bright) 24%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-paper) 16%, transparent);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     display: flex;
@@ -385,8 +386,8 @@ const pricingServiceSchema = {
   .step-n {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-brand-bright);
+    font-weight: 600;
+    color: color-mix(in srgb, var(--color-paper) 70%, transparent);
     letter-spacing: 0.18em;
   }
   .step h3 { margin: 0; font-size: 1.0625rem; }

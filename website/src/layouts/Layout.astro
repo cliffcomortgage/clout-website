@@ -25,7 +25,11 @@ interface Props {
   extraSchema?: string[];
   /** Optional noindex for search/utility pages. */
   noindex?: boolean;
-  /** Porcelain-background footer instead of the default dark Deep Reserve footer. */
+  /**
+   * Retained so pages that still pass it keep compiling. The site is black
+   * end to end now, so there is no light footer to switch to.
+   * @deprecated ignored
+   */
   footerLight?: boolean;
 }
 
@@ -37,7 +41,7 @@ const {
   breadcrumbs,
   extraSchema = [],
   noindex = false,
-  footerLight = false,
+
 } = Astro.props;
 
 const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
@@ -56,12 +60,30 @@ const schemaBlocks: string[] = [
     <script is:inline>document.documentElement.classList.add('js');</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#004045" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0d0d0d" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="canonical" href={canonical} />
+
+    {/* Typography — the same stack cliffco-site loads (Outfit + IBM Plex
+        Mono), so the two sister sites render in identical letterforms.
+        Grift and Jitzu are no longer used on the web. */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Montserrat:wght@600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      />
+    </noscript>
 
     {/* Open Graph + Twitter */}
     <meta property="og:type" content="website" />
@@ -90,7 +112,7 @@ const schemaBlocks: string[] = [
     <main id="main">
       <slot />
     </main>
-    <Footer light={footerLight} />
+    <Footer />
     <script>
       // Scroll progress bar — informational, not decorative, so it still
       // renders (just without the eased width transition) under

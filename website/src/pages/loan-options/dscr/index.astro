@@ -411,12 +411,24 @@ const article = articleSchema({
   .breadcrumbs span[aria-hidden] { margin: 0 0.5rem; color: var(--color-line); }
 
   .eyebrow {
-    font-size: var(--text-micro);
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-warmth);
-    font-weight: 700;
+    color: var(--color-ink);
+    font-weight: 600;
     margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5px;
+    background: var(--color-brand-bright);
+    flex-shrink: 0;
   }
   h1 {
     font-size: clamp(2rem, 4.5vw, 3.25rem);

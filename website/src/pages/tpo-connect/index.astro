@@ -285,7 +285,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="band band-dark">
+  <section class="band band-invert">
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Turn-times</p>
@@ -400,7 +400,7 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="band band-dark">
+  <section class="band band-invert">
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Recent closings</p>
@@ -551,13 +551,14 @@ const serviceSchema = {
   .band { padding: 4rem 0; }
   .band-tldr { padding-top: 0; margin-top: -1.5rem; position: relative; z-index: 1; }
   .band-surface { background: var(--color-surface); }
-  .band-dark { background: var(--color-brand-deep); color: var(--color-paper); }
-  .band-dark .eyebrow { color: var(--color-brand-bright); }
-  .band-dark h2, .band-dark h3 { color: var(--color-paper); }
+  .band-invert { background: var(--color-ink); color: var(--color-paper); }
+  .band-invert .eyebrow { color: var(--color-paper); }
+  .band-invert .eyebrow::before { background: var(--color-paper); }
+  .band-invert h2, .band-invert h3 { color: var(--color-paper); }
   .band-compliance { padding: 2rem 0 3.5rem; }
 
   /* TLDR (override grid for 2-up) */
-  .band-tldr .tldr { background: var(--color-paper); box-shadow: 0 12px 40px -24px rgba(0, 65, 70, 0.18); }
+  .band-tldr .tldr { background: var(--color-paper); box-shadow: 0 12px 40px -24px rgba(0, 0, 0, 0.55); }
   .band-tldr .tldr ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
@@ -584,7 +585,7 @@ const serviceSchema = {
   .feature-card:hover {
     border-color: var(--color-brand);
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px -18px rgba(1, 128, 118, 0.22);
+    box-shadow: 0 14px 28px -18px rgba(0, 0, 0, 0.55);
   }
   .feature-card h3 { font-size: 1.0625rem; margin: 0 0 0.5rem; color: var(--color-brand-deep); }
   .feature-card p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); line-height: 1.6; }
@@ -600,12 +601,13 @@ const serviceSchema = {
   .turn-table thead th {
     text-align: left;
     padding: 0.875rem 1rem;
+    font-family: var(--font-mono);
     font-weight: 600;
-    color: var(--color-brand-bright);
+    color: color-mix(in srgb, var(--color-paper) 60%, transparent);
     font-size: var(--text-meta);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    border-bottom: 1px solid color-mix(in srgb, var(--color-brand-bright) 30%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-paper) 25%, transparent);
   }
   .turn-table tbody th, .turn-table tbody td {
     padding: 1rem;
@@ -641,15 +643,16 @@ const serviceSchema = {
   .product-card:hover {
     border-color: var(--color-brand);
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px -16px rgba(1, 128, 118, 0.18);
+    box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
   }
   .product-card-head { display: flex; align-items: baseline; gap: 0.75rem; }
   .product-tier {
-    font-size: var(--text-micro);
-    letter-spacing: 0.14em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-mid);
     font-weight: 600;
+    color: var(--color-mid);
   }
   .product-card h3 { font-size: 1.125rem; margin: 0; }
   .product-card p { margin: 0; color: var(--color-ink-soft); font-size: var(--text-small); }
@@ -678,7 +681,7 @@ const serviceSchema = {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--color-brand-warmth);
+    color: var(--color-label);
     letter-spacing: 0.18em;
   }
   .step h3 { margin: 0; font-size: 1.0625rem; color: var(--color-brand-deep); }
@@ -721,7 +724,7 @@ const serviceSchema = {
     border-radius: var(--radius-lg);
     padding: 1.75rem;
     background: var(--color-paper);
-    box-shadow: 0 16px 36px -24px rgba(0, 65, 70, 0.14);
+    box-shadow: 0 16px 36px -24px rgba(0, 0, 0, 0.5);
   }
   .scenario-desk-card .eyebrow { margin: 0 0 0.75rem; }
   .desk-line {
@@ -739,7 +742,7 @@ const serviceSchema = {
     gap: 1rem;
   }
   .scenario-dark {
-    border: 1px solid color-mix(in srgb, var(--color-brand-bright) 24%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-paper) 16%, transparent);
     background: color-mix(in srgb, var(--color-paper) 6%, transparent);
     color: var(--color-paper);
   }
@@ -768,11 +771,12 @@ const serviceSchema = {
   .ae-card h3 { font-size: 1.125rem; margin: 0 0 0.25rem; color: var(--color-brand-deep); }
   .ae-coverage {
     margin: 0 0 0.75rem;
-    font-size: var(--text-micro);
-    letter-spacing: 0.16em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-warmth);
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-label);
   }
   .ae-card p { color: var(--color-ink-soft); font-size: var(--text-small); line-height: 1.6; margin: 0 0 1rem; }
   .ae-contact { display: flex; flex-direction: column; gap: 0.25rem; font-weight: 600; }
@@ -790,14 +794,15 @@ const serviceSchema = {
     border-radius: var(--radius-lg);
     padding: 1.75rem;
     background: var(--color-paper);
-    box-shadow: 0 16px 36px -24px rgba(0, 65, 70, 0.14);
+    box-shadow: 0 16px 36px -24px rgba(0, 0, 0, 0.5);
   }
   .apply-card-title {
-    font-size: var(--text-micro);
-    letter-spacing: 0.16em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-deep);
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-ink);
     margin: 0 0 0.75rem;
   }
   .apply-next {

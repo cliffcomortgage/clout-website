@@ -77,8 +77,10 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--color-brand-deep);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(13, 13, 13, 0.88);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid var(--color-line);
   }
 
   .header-row {
@@ -115,6 +117,7 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
   }
   .primary-nav a,
   .primary-nav button {
+    text-decoration: none;
     display: inline-block;
     padding: 0.5rem 0.875rem;
     color: rgba(255, 255, 255, 0.72);
@@ -147,12 +150,12 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
        page-wide horizontal scroll. */
     width: 640px;
     max-width: calc(100vw - 2rem);
-    background: var(--color-paper);
+    background: var(--color-silk);
     border: 1px solid var(--color-line);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     box-shadow:
-      0 20px 60px -16px rgba(0, 0, 0, 0.22),
-      0 4px 16px -4px rgba(0, 0, 0, 0.1);
+      0 20px 60px -16px rgba(0, 0, 0, 0.7),
+      0 4px 16px -4px rgba(0, 0, 0, 0.5);
     padding: 1.25rem;
     opacity: 0;
     visibility: hidden;
@@ -190,7 +193,7 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
   .menu-panel .menu-item {
     white-space: normal;
   }
-  .menu-item:hover { background: var(--color-surface); }
+  .menu-item:hover { background: rgba(255, 255, 255, 0.07); }
 
   .menu-name {
     font-weight: 600;
@@ -210,7 +213,7 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
     text-align: right;
   }
   .menu-foot a {
-    color: var(--color-brand-deep);
+    color: var(--color-ink);
     font-weight: 600;
     font-size: 0.875rem;
     text-decoration: none;
@@ -219,7 +222,7 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
 
   .nav-portal-trigger {
     color: var(--color-brand-bright) !important;
-    border: 1px solid rgba(3, 191, 181, 0.3) !important;
+    border: 1px solid rgba(3, 191, 181, 0.35) !important;
     margin-left: 0.25rem;
   }
   .nav-portal-trigger:hover,
@@ -257,21 +260,22 @@ import { SITE, PRODUCTS, STATES } from '../data/site';
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 1.25rem;
+    padding: 0.5625rem 1.25rem;
     border-radius: var(--radius-md);
-    background: var(--color-brand-bright);
-    color: var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-paper);
     font-family: var(--font-accent);
-    font-weight: 700;
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    min-height: 40px;
     text-decoration: none;
     white-space: nowrap;
-    transition: background 120ms ease, color 120ms ease;
+    transition: background 180ms ease, color 180ms ease;
   }
   .header-btn:hover {
-    background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
+    background: rgba(255, 255, 255, 0.85);
     color: var(--color-paper);
   }
 

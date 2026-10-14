@@ -108,12 +108,24 @@ const resources: Resource[] = [
       linear-gradient(180deg, var(--color-paper) 0%, var(--color-surface) 100%);
   }
   .eyebrow {
-    font-size: var(--text-micro);
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-warmth);
-    font-weight: 700;
+    color: var(--color-ink);
+    font-weight: 600;
     margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5px;
+    background: var(--color-brand-bright);
+    flex-shrink: 0;
   }
   .hero h1 {
     font-size: clamp(2rem, 4.5vw, 3rem);
@@ -145,7 +157,7 @@ const resources: Resource[] = [
   .resource-card:hover {
     border-color: var(--color-brand);
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px -16px rgba(1, 128, 118, 0.18);
+    box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
   }
   .resource-card.is-soon {
     background: var(--color-surface);
@@ -168,10 +180,11 @@ const resources: Resource[] = [
     color: var(--color-brand-deep);
   }
   .status {
-    font-size: var(--text-micro);
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
+    font-weight: 600;
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius-sm);
     white-space: nowrap;

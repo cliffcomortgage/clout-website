@@ -1,116 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 /* ============================================================
-   Brand typefaces — self-hosted from /public/fonts/
-   Grift: primary UI + heading font
-   Jitzu: display / hero accent font
-   ============================================================ */
+   Clout design tokens (Tailwind CSS v4 — CSS-first config).
 
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-REGULAR.TTF') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-ITALIC.TTF') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-MEDIUM.TTF') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-MEDIUMITALIC.TTF') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-SEMIBOLD.TTF') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Grift';
-  src: url('/fonts/GRIFT-BOLD.TTF') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+   Clout is the inverse of its sister site, cliffco-site: Cliffco
+   is a black-on-white monochrome system, Clout is the same system
+   run white-on-black. The surface, text and line ramps below are
+   mirrors of Cliffco's, the typography is identical (Outfit +
+   IBM Plex Mono), and the component geometry (8px button radius,
+   2px outline buttons, 44px tap targets, solid-fill card hovers)
+   is copied so the two read as one family.
 
-@font-face {
-  font-family: 'Jitzu';
-  src: url('/fonts/JITZU-REGULAR.OTF') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Jitzu';
-  src: url('/fonts/JITZU-MEDIUM.OTF') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Jitzu';
-  src: url('/fonts/JITZU-BOLD.OTF') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Jitzu';
-  src: url('/fonts/JITZU-BLACK.OTF') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+   Teal #03BFB5 is the single colour in the system and the only
+   thing that distinguishes Clout from Cliffco visually. It is
+   deliberately rationed: eyebrow rules, stat figures, link hovers,
+   focus rings. It never fills a button or a card. The copper
+   accent from the original Clout palette is retired — see
+   --color-label, which replaced it.
 
-/* ============================================================
-   Clout brand design tokens
-   Locked palette: teal anchor + rust accent
+   Typography note: Grift and Jitzu (the brand guide's typefaces)
+   are no longer used on the site. Their trial licences do not
+   cover web use, and matching Cliffco's letterforms is what makes
+   the two sites read as sister brands. The font files remain in
+   /public/fonts/ for print use.
    ============================================================ */
 
 @theme {
-  /* Brand — Deep Reserve (Primary), Signal (Secondary), Copper Seal (Accent) */
-  --color-brand-deep:    #004045;   /* Deep Reserve — headlines, primary surfaces */
-  --color-brand:         #004045;   /* Deep Reserve — primary interactive */
-  --color-brand-bright:  #03BFB5;   /* Signal — CTAs, highlights, interactive states (use sparingly) */
-  --color-brand-warmth:  #C45729;   /* Copper Seal — eyebrows, rules, finishing touch (never dominant) */
+  /* ---------- Surfaces (mirror of Cliffco's #ffffff / #f0eef1) ---------- */
+  --color-paper:   #0d0d0d;   /* page default — same black as Cliffco's ink */
+  --color-surface: #151517;   /* alternating section band */
+  --color-silk:    #1c1a20;   /* raised panels, card hover */
 
-  /* Neutrals */
-  --color-ink:           #1A1F21;   /* Graphite — body text, dark surfaces */
-  --color-ink-soft:      #2E3338;
-  --color-mid:           #949398;
-  --color-line:          #D9DEE2;
-  --color-surface:       #F0F5FA;   /* Porcelain — default light background */
-  --color-silk:          #F2F2F5;   /* Silk — cards, secondary surfaces, dividers */
-  --color-paper:         #FFFFFF;
+  /* ---------- Text (mirror of #0d0d0d / #3d4040 / #5a5d5d) ---------- */
+  --color-ink:      #ffffff;  /* headings, primary text */
+  --color-ink-soft: #c2c4c4;  /* body copy */
+  --color-mid:      #8d9090;  /* muted / secondary */
 
-  /* Type scale (rem) */
-  --text-display: 3.5rem;
-  --text-h1: 2.5rem;
-  --text-h2: 1.875rem;
-  --text-h3: 1.375rem;
-  --text-body: 1.0625rem;
-  --text-small: 0.9375rem;
+  /* ---------- Lines ---------- */
+  --color-line: #2a2a2d;      /* hairlines ≈ rgba(255,255,255,0.12) on paper */
+
+  /* ---------- Brand ---------- */
+  /* White carries every job Deep Reserve used to: headings, links,
+     primary buttons, inverted bands. */
+  --color-brand:        #ffffff;
+  --color-brand-deep:   #ffffff;
+  --color-brand-bright: #03bfb5;  /* teal — the one colour, used sparingly */
+  --color-label:        #8d9090;  /* small mono labels (replaced copper #C45729) */
+
+  /* ---------- Typography (identical to cliffco-site) ---------- */
+  --font-sans:    "Outfit", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-accent:  "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-logo:    "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-serif:   ui-serif, Georgia, "Times New Roman", serif;
+
+  /* ---------- Type scale ---------- */
+  --text-display: clamp(3rem, 6vw + 1rem, 5.5rem);
+  --text-h1: clamp(2rem, 3.5vw + 0.5rem, 3rem);
+  --text-h2: clamp(1.5rem, 2.5vw + 0.5rem, 2.25rem);
+  --text-h3: clamp(1.25rem, 1.5vw + 0.5rem, 1.625rem);
+  --text-lead: 1.125rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
   --text-meta: 0.8125rem;
-  --text-micro: 0.6875rem;
+  --text-micro: 0.75rem;
+  --text-eyebrow: 0.75rem;
 
-  /* Spacing rhythm — use multiples of 4px */
+  /* ---------- Spacing rhythm — multiples of 4px ---------- */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -120,51 +78,108 @@
   --spacing-12: 3rem;
   --spacing-16: 4rem;
   --spacing-24: 6rem;
+  --spacing-section: clamp(5rem, 8vw, 7rem);
 
-  /* Type stack */
-  --font-sans:    'Open Sans', ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
-  --font-display: 'Jitzu', ui-serif, Georgia, serif;
-  --font-accent:  'Open Sans', ui-sans-serif, sans-serif; /* eyebrows, CTAs, callouts — always ALL-CAPS, tracking 0.1em */
-  --font-grift:   'Grift', ui-sans-serif, system-ui, sans-serif;
-  --font-serif:   ui-serif, Georgia, "Times New Roman", serif;
-  --font-mono:    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
-
-  /* Radius */
+  /* ---------- Radius (Cliffco uses 8px on controls, 1.75rem on panels) ---------- */
   --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --radius-xl: 16px;
+  --radius-panel: 1.75rem;
 }
 
 /* ============================================================
-   Base resets + global rhythm
+   Base
    ============================================================ */
 
 html {
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  color-scheme: dark;
+  background: var(--color-paper);
 }
 
 body {
   background: var(--color-paper);
-  color: var(--color-ink);
+  color: var(--color-ink-soft);
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: 1.6;
+  font-feature-settings: "kern", "liga", "ss01";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings — Cliffco's weights, mirrored to white */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+h1, h2, h3, h4 {
+  color: var(--color-ink);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: var(--text-h1); font-weight: 400; }
+h2 { font-size: var(--text-h2); font-weight: 300; }
+h3 { font-size: var(--text-h3); font-weight: 500; letter-spacing: -0.01em; }
+
+a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+a:hover {
+  color: var(--color-brand-bright);
+  text-decoration-color: var(--color-brand-bright);
+  text-decoration-thickness: 2px;
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Focus — WCAG 2.2 Focus Appearance (Enhanced). Teal reads clearly
+   on both the black page and the white inverted bands. */
+:focus-visible {
+  outline: 2.5px solid var(--color-brand-bright);
+  outline-offset: 3px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 4px rgba(3, 191, 181, 0.22);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+.skip-link:focus { left: 0; }
+
 /* ============================================================
-   Scroll progress bar (site-wide) — see Layout.astro for the script
+   Scroll progress bar — see Layout.astro for the script
    ============================================================ */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
-  height: 3px;
-  background: linear-gradient(to right, var(--color-brand-warmth), var(--color-brand-bright));
+  height: 2px;
+  background: var(--color-brand-bright);
   z-index: 200;
   pointer-events: none;
 }
@@ -183,8 +198,9 @@ body {
    ============================================================ */
 html.js .reveal-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transform: translateY(22px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 html.js .reveal-up.is-visible {
@@ -197,63 +213,6 @@ html.js .reveal-up.is-visible {
     transform: none;
     transition: none;
   }
-}
-
-/* Selection */
-::selection {
-  background: color-mix(in srgb, var(--color-brand) 24%, transparent);
-  color: var(--color-ink);
-}
-
-/* Focus — meets WCAG 2.2 AA focus appearance */
-:focus-visible {
-  outline: 3px solid var(--color-brand-bright);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-/* Skip-to-main link */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  padding: var(--spacing-3) var(--spacing-4);
-  background: var(--color-ink);
-  color: var(--color-paper);
-  z-index: 9999;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-}
-.skip-link:focus {
-  left: 0;
-}
-
-/* Typography defaults */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.2;
-  color: var(--color-ink);
-}
-
-a {
-  color: var(--color-brand);
-  text-decoration-color: color-mix(in srgb, var(--color-brand) 30%, transparent);
-  text-underline-offset: 2px;
-  transition: color 120ms ease, text-decoration-color 120ms ease;
-}
-a:hover {
-  color: color-mix(in srgb, var(--color-brand) 70%, black);
-  text-decoration-color: color-mix(in srgb, var(--color-brand) 70%, black);
-}
-
-/* Code / mono */
-code, pre, kbd {
-  font-family: var(--font-mono);
-  font-size: 0.94em;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -263,11 +222,192 @@ code, pre, kbd {
 }
 
 /* ============================================================
+   Eyebrow — IBM Plex Mono, uppercase, with a teal lead-in rule.
+   The rule is the single most repeated piece of colour on the site.
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--text-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5px;
+  background: var(--color-brand-bright);
+  flex-shrink: 0;
+}
+
+/* Small uppercase mono label with no rule — table headers, card kickers */
+.label-mono {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+/* ============================================================
+   Buttons — Cliffco's .btn geometry, inverted.
+   Primary is a solid white fill on black; secondary is a 2px white
+   outline that fills white on hover. Both are 44px minimum.
+   ============================================================ */
+
+.cta-primary,
+.cta-signal,
+.cta-ghost,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: var(--text-body);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  min-height: 44px;
+  min-width: 44px;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+/* Solid white — the primary action */
+.cta-primary,
+.cta-signal {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: 2px solid var(--color-ink);
+}
+.cta-primary:hover,
+.cta-signal:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: var(--color-paper);
+  text-decoration: none;
+}
+
+/* Outline — the secondary action */
+.cta-ghost,
+.cta-secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+}
+.cta-ghost:hover,
+.cta-secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  text-decoration: none;
+}
+
+/* ============================================================
+   Inverted band — a solid white section on the black page, the
+   mirror of Cliffco's solid-black bands on its white page.
+
+   Used by the broker, TPO Connect and pricing pages for their
+   emphasis band (it was .band-dark when the page was light).
+
+   Anything inside that expresses its colour as --color-paper means
+   'the colour that contrasts with this band' and needs no help. What
+   does need help is anything styled against the page rather than
+   against the band — buttons above all, which would otherwise render
+   solid white on white — so those are flipped below.
+   ============================================================ */
+
+.band-invert {
+  background: var(--color-ink);
+  color: #3d4040;
+}
+.band-invert h1,
+.band-invert h2,
+.band-invert h3,
+.band-invert h4,
+.band-invert strong,
+.band-invert dt,
+.band-invert th { color: var(--color-paper); }
+
+.band-invert .eyebrow { color: var(--color-paper); }
+.band-invert .eyebrow::before { background: var(--color-paper); }
+.band-invert .label-mono { color: #5a5d5d; }
+
+.band-invert a {
+  color: var(--color-paper);
+  text-decoration-color: rgba(13, 13, 13, 0.3);
+}
+.band-invert a:hover {
+  color: #3d4040;
+  text-decoration-color: #3d4040;
+}
+.band-invert hr,
+.band-invert .rule {
+  background: rgba(13, 13, 13, 0.15);
+  border-color: rgba(13, 13, 13, 0.15);
+}
+
+/* Buttons flip with the band. Without this a .cta-primary dropped into
+   one of these sections is white on white. */
+.band-invert .cta-primary,
+.band-invert .cta-signal {
+  background: var(--color-paper);
+  border-color: var(--color-paper);
+  color: var(--color-ink);
+}
+.band-invert .cta-primary:hover,
+.band-invert .cta-signal:hover {
+  background: #262626;
+  border-color: #262626;
+  color: var(--color-ink);
+}
+.band-invert .cta-ghost,
+.band-invert .cta-secondary {
+  background: transparent;
+  border-color: var(--color-paper);
+  color: var(--color-paper);
+}
+.band-invert .cta-ghost:hover,
+.band-invert .cta-secondary:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+.band-invert :focus-visible {
+  outline-color: var(--color-paper);
+  box-shadow: 0 0 0 4px rgba(13, 13, 13, 0.18);
+}
+
+/* ============================================================
+   Cards — Cliffco's outline card, inverted. A 1px hairline at rest;
+   the hover state fills solid white with black text, which is the
+   exact mirror of Cliffco's fill-black-on-hover.
+   ============================================================ */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+.card:hover { border-color: rgba(255, 255, 255, 0.35); }
+
+/* ============================================================
    Reusable patterns from the AEO playbook
    ============================================================ */
 
 .answer-first {
-  font-size: 1.1875rem;
+  font-size: var(--text-lead);
   line-height: 1.55;
   color: var(--color-ink);
   max-width: 64ch;
@@ -275,15 +415,17 @@ code, pre, kbd {
 
 .tldr {
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: var(--spacing-6);
   background: var(--color-surface);
 }
 .tldr h2 {
+  font-family: var(--font-mono);
   font-size: var(--text-micro);
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-brand-deep);
+  color: var(--color-ink);
   margin: 0 0 var(--spacing-4) 0;
 }
 .tldr ul {
@@ -298,10 +440,10 @@ code, pre, kbd {
   grid-template-columns: 1fr auto;
   gap: var(--spacing-4);
   padding: var(--spacing-2) 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 60%, transparent);
+  border-bottom: 1px solid var(--color-line);
 }
 .tldr li:last-child { border-bottom: none; }
-.tldr li .label { color: var(--color-ink-soft); }
+.tldr li .label { color: var(--color-mid); }
 .tldr li .value { font-weight: 600; color: var(--color-ink); }
 
 .reviewed-by {
@@ -334,7 +476,8 @@ code, pre, kbd {
 .faq summary::after {
   content: '+';
   font-size: 1.5rem;
-  color: var(--color-brand);
+  font-weight: 300;
+  color: var(--color-brand-bright);
   transition: transform 120ms ease;
 }
 .faq details[open] summary::after { content: '–'; }
@@ -342,15 +485,16 @@ code, pre, kbd {
 
 .scenario {
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: var(--spacing-6);
-  background: var(--color-paper);
+  background: var(--color-surface);
 }
 .scenario .scenario-eyebrow {
-  font-size: var(--text-micro);
-  letter-spacing: 0.16em;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-brand-warmth);
+  color: var(--color-label);
   font-weight: 600;
 }
 .scenario h3 {
@@ -377,150 +521,34 @@ code, pre, kbd {
   text-decoration-color: var(--color-line);
 }
 .compliance-row a:hover {
-  color: var(--color-brand);
-  text-decoration-color: var(--color-brand);
+  color: var(--color-brand-bright);
+  text-decoration-color: var(--color-brand-bright);
 }
 
 /* ============================================================
-   Brand pattern — spark marks tile, used on Deep Reserve sections
+   Shared components dropped inside an inverted band.
+
+   `.band-invert` is the page-level class the broker, TPO Connect and
+   pricing pages already use for their emphasis band. It used to be a
+   dark band on a light page; inverting the tokens turned it into a
+   white band on the black page, so anything generic placed inside it
+   needs its colours flipped back. These selectors are written to
+   out-specify the versions above (and to tie-break later than them),
+   but page-scoped Astro styles still win over anything here — those
+   are patched per page.
    ============================================================ */
 
-/* Spark pattern overlay div — place inside a position:relative section */
-.spark-tile {
-  position: absolute;
-  inset: -35%;
-  background-image: url('/brand/pattern-sparks.svg');
-  background-size: 72px 72px;
-  opacity: 0.14;
-  pointer-events: none;
-  z-index: 0;
-  transform: rotate(35deg);
-  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 80% 20%, black 0%, transparent 70%);
-  mask-image: radial-gradient(ellipse 65% 60% at 80% 20%, black 0%, transparent 70%);
-}
+.band-invert .scenario .scenario-eyebrow { color: #5a5d5d; }
+.band-invert .scenario dt { color: #5a5d5d; }
+.band-invert .scenario dd,
+.band-invert .scenario h3 { color: var(--color-paper); }
 
-/* ============================================================
-   Global eyebrow — Open Sans Bold, ALL CAPS, Copper Seal
-   ============================================================ */
+.band-invert .faq,
+.band-invert .faq details { border-color: rgba(13, 13, 13, 0.15); }
+.band-invert .faq summary { color: var(--color-paper); }
+.band-invert .faq summary::after { color: var(--color-paper); }
+.band-invert .faq details > div { color: #3d4040; }
 
-.eyebrow {
-  font-family: var(--font-accent);
-  font-weight: 700;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-brand-warmth);
-  margin: 0 0 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5px;
-  background: currentColor;
-  flex-shrink: 0;
-}
-
-/* ============================================================
-   CTA variants
-   ============================================================ */
-
-/* Primary CTA — Deep Reserve bg, white text (authoritative/institutional) */
-.cta-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  padding: 0.8125rem 1.75rem;
-  border-radius: var(--radius-md);
-  background: var(--color-brand-deep);
-  color: var(--color-paper);
-  font-family: var(--font-accent);
-  font-weight: 700;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 150ms ease;
-  border: none;
-}
-.cta-primary:hover {
-  background: color-mix(in srgb, var(--color-brand-deep) 82%, black);
-  color: var(--color-paper);
-}
-
-/* Signal CTA — bright teal bg, dark text (velocity/action moments) */
-.cta-signal {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  padding: 0.8125rem 1.75rem;
-  border-radius: var(--radius-md);
-  background: var(--color-brand-bright);
-  color: var(--color-ink);
-  font-family: var(--font-accent);
-  font-weight: 700;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 150ms ease, color 150ms ease;
-  border: none;
-}
-.cta-signal:hover {
-  background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
-  color: var(--color-paper);
-}
-
-/* Ghost CTA — white outline, for use on dark Deep Reserve backgrounds */
-.cta-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  padding: 0.8125rem 1.75rem;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: rgba(255,255,255,0.85);
-  border: 1.5px solid rgba(255,255,255,0.3);
-  font-family: var(--font-accent);
-  font-weight: 700;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
-}
-.cta-ghost:hover {
-  border-color: rgba(255,255,255,0.65);
-  background: rgba(255,255,255,0.08);
-  color: var(--color-paper);
-}
-
-/* Secondary CTA — Signal bg (legacy alias kept for existing usage) */
-.cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-  padding: 0.8125rem 1.75rem;
-  border-radius: var(--radius-md);
-  background: var(--color-brand-bright);
-  color: var(--color-ink);
-  font-family: var(--font-accent);
-  font-weight: 700;
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  transition: background 150ms ease, color 150ms ease;
-}
-.cta-secondary:hover {
-  background: color-mix(in srgb, var(--color-brand-bright) 80%, black);
-  color: var(--color-paper);
-}
+.band-invert .compliance-row { color: #5a5d5d; }
+.band-invert .compliance-row a { color: #3d4040; }
+.band-invert .compliance-row a:hover { color: var(--color-paper); }

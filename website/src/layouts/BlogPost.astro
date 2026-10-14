@@ -190,7 +190,7 @@ const displayDate =
   .post-body blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    border-left: 3px solid var(--color-brand-warmth);
+    border-left: 3px solid var(--color-label);
     background: var(--color-surface);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     font-size: 1rem;
@@ -293,12 +293,24 @@ const displayDate =
   .crumbs span[aria-hidden] { margin: 0 0.5rem; color: var(--color-line); }
 
   .eyebrow {
-    font-size: var(--text-micro);
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-warmth);
-    font-weight: 700;
+    color: var(--color-ink);
+    font-weight: 600;
     margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5px;
+    background: var(--color-brand-bright);
+    flex-shrink: 0;
   }
   .post-hero h1 {
     font-size: clamp(1.75rem, 4vw, 2.75rem);
@@ -327,14 +339,15 @@ const displayDate =
     grid-template-columns: 1.4fr 1fr;
     gap: 1.5rem;
     align-items: center;
-    box-shadow: 0 16px 40px -24px rgba(0, 65, 70, 0.14);
+    box-shadow: 0 16px 40px -24px rgba(0, 0, 0, 0.5);
   }
   .cta-eyebrow {
-    font-size: var(--text-micro);
-    letter-spacing: 0.16em;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-brand-warmth);
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-label);
     margin: 0 0 0.5rem;
   }
   .cta-card h2 { margin: 0 0 0.5rem; font-size: 1.375rem; color: var(--color-brand-deep); }
